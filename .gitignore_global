@@ -1,0 +1,14 @@
+# git config --global core.excludesfile ~/.gitignore_global
+
+.DS_Store
+.DS_Store?
+Gemfile.lock
+vendor/
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+node_modules/
+*.pyc
+instance/

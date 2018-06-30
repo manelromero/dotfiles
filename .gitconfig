@@ -1,0 +1,7 @@
+[user]
+	name = Manel Romero
+	email = manel@manelromero.com
+[pull]
+	rebase = true
+[rerere]
+	enabled = true

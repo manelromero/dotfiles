@@ -1,0 +1,21 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"A File Icon",
+		"Babel",
+		"Dockerfile Syntax Highlighting",
+		"Emmet",
+		"Git blame",
+		"JsPrettier",
+		"Package Control",
+		"PackageResourceViewer",
+		"SCSS",
+		"SublimeLinter",
+		"SublimeLinter-eslint",
+		"Theme - Cobalt2"
+	]
+}
