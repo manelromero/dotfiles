@@ -19,9 +19,9 @@ set laststatus=2
 " Backup 
 set backup
 set noswapfile
-set directory=~/.vim/tmp
-set backupdir=~/.vim/tmp
-set undodir=~/.vim/tmp
+set directory=~/.vim/temp
+set backupdir=~/.vim/temp
+set undodir=~/.vim/temp
 
 " Leader
 let mapleader = ','
@@ -70,9 +70,9 @@ filetype plugin indent on
 
 " Define which linters to use 
 let g:ale_linters = {
-\   'javascript': ['eslint'],
-\   'css': ['csslint', 'prettier', 'stylelint'],
-\   'html': ['HTMLHint']
+\  'javascript': ['eslint', 'prettier'],
+\  'css': ['csslint', 'prettier', 'stylelint'],
+\  'html': ['HTMLHint']
 \}
 let g:ale_linters_explicit = 1
 
@@ -87,7 +87,9 @@ nmap <leader>f :Files<cr>
 
 " ALE
 nmap <leader>j :ALEFix eslint<cr>
-let g:ale_sign_error = '•'
-let g:ale_sing_warning = '.'
-highlight link ALEWarningSign String
-highlight link ALEErrorSign Title
+let g:ale_sign_error = '>'
+let g:ale_sign_warning = '-'
+highlight link ALEError Error 
+highlight link ALEWarning Warning
+highlight clear ALEErrorSign
+highlight clear ALEWarningSign
