@@ -17,10 +17,11 @@ let s:blue = "81a2be"
 let s:purple = "b294bb"
 let s:window = "4d5057"
 let s:identifier = 'ae00ff'
+let s:grey = '7a7a7a'
 
 " Console 256 Colours
 if !has("gui_running")
-	let s:background = "202020"
+	let s:background = '262626'
 	let s:window = "5e5e5e"
 	let s:line = "3a3a3a"
 	let s:selection = '666666'
@@ -241,6 +242,8 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
 	" Vim Highlighting
 	call <SID>X('Normal', s:foreground, s:background, '')
+	call <SID>X('Error', s:foreground, s:grey, '')
+	call <SID>X('Warning', s:foreground, s:grey, '')
 	call <SID>X("LineNr", s:selection, "", "")
 	call <SID>X("NonText", s:selection, "", "")
 	call <SID>X("SpecialKey", s:selection, "", "")
@@ -293,6 +296,8 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
 	" Vim Highlighting
 	call <SID>X("vimCommand", s:red, "", "none")
+	call <SID>X('User1', s:blue, s:selection, '')
+	call <SID>X('User2', s:yellow, s:selection, '')
 
 	" C Highlighting
 	call <SID>X("cType", s:yellow, "", "")
@@ -372,6 +377,8 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
   call <SID>X('jsConditional', s:blue, '', '')
   call <SID>X('jsReturn', s:red, '', '')
   call <SID>X('jsComment', s:comment, '', '')
+  call <SID>X('jsNull', s:red, '', '')
+  call <SID>X('jsUndefined', s:red, '', '')
 
 	" CoffeeScript Highlighting
 	call <SID>X("coffeeRepeat", s:purple, "", "")

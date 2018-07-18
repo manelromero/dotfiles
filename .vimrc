@@ -14,7 +14,13 @@ set autoindent
 set shiftwidth=2
 
 set wildmenu
+
+" Status line
 set laststatus=2
+set statusline=
+set statusline+=%1*\ %l/%L
+set statusline+=%2*\ %F
+set statusline+=\ %m
 
 " Backup 
 set backup
@@ -64,6 +70,8 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'w0rp/ale'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'ngmy/vim-rubocop'
+Plugin 'johngrib/vim-game-code-break'
+Plugin 'jiangmiao/auto-pairs'
 call vundle#end()
 
 filetype plugin indent on
@@ -71,6 +79,7 @@ filetype plugin indent on
 " Define which linters to use 
 let g:ale_linters = {
 \  'javascript': ['eslint', 'prettier'],
+\  'json': ['jsonlint', 'prettier'],
 \  'css': ['csslint', 'prettier', 'stylelint'],
 \  'html': ['HTMLHint']
 \}
