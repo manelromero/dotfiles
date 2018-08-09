@@ -1,36 +1,28 @@
-" Manel theme - Full Colour and 256 Colour
+" Manel theme
 " Based on Tomorrow-Night theme
 
-" Default GUI Colours
+" Colors
+let s:background = '262626'
+let s:window = '5e5e5e'
+let s:line = '3a3a3a'
+let s:selection = '666666'
 let s:foreground = 'cccccc'
-let s:background = '1d1f21'
 let s:white = 'ffffff'
-let s:selection = '393939' 
-let s:line = "282a2e"
 let s:comment = '999999'
 let s:red = 'cc6666'
-let s:orange = "de935f"
-let s:yellow = "f0c674"
-let s:green = "b5bd68"
-let s:aqua = "8abeb7"
-let s:blue = "81a2be"
-let s:purple = "b294bb"
-let s:window = "4d5057"
+let s:orange = 'de935f'
+let s:yellow = 'f0c674'
+let s:green = 'b5bd68'
+let s:aqua = '8abeb7'
+let s:blue = '81a2be'
+let s:purple = 'b294bb'
 let s:identifier = 'ae00ff'
 let s:grey = '7a7a7a'
-
-" Console 256 Colours
-if !has("gui_running")
-	let s:background = '262626'
-	let s:window = "5e5e5e"
-	let s:line = "3a3a3a"
-	let s:selection = '666666'
-end
 
 hi clear
 syntax reset
 
-let g:colors_name = "Tomorrow-Night"
+let g:colors_name = 'Tomorrow-Night'
 
 if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	" Returns an approximate grey index for the given grey level
@@ -235,8 +227,8 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 		if a:bg != ""
 			exec "hi " . a:group . " guibg=#" . a:bg . " ctermbg=" . <SID>rgb(a:bg)
 		endif
-		if a:attr != ""
-			exec "hi " . a:group . " gui=" . a:attr . " cterm=" . a:attr
+		if a:attr != ''
+			exec 'hi ' . a:group . ' gui=' . a:attr . ' cterm=' . a:attr
 		endif
 	endfun
 
@@ -247,7 +239,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("LineNr", s:selection, "", "")
 	call <SID>X("NonText", s:selection, "", "")
 	call <SID>X("SpecialKey", s:selection, "", "")
-	call <SID>X("Search", s:background, s:yellow, "")
+	call <SID>X('Search', s:background, s:blue, '')
 	call <SID>X("TabLine", s:window, s:foreground, "reverse")
 	call <SID>X("TabLineFill", s:window, s:foreground, "reverse")
 	call <SID>X("StatusLine", s:window, s:yellow, "reverse")
@@ -292,7 +284,6 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("Type", s:blue, "", "none")
 	call <SID>X("Define", s:purple, "", "none")
 	call <SID>X("Include", s:blue, "", "")
-	"call <SID>X("Ignore", "666666", "", "")
 
 	" Vim Highlighting
 	call <SID>X("vimCommand", s:red, "", "none")
@@ -499,9 +490,9 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("scalaBackTick", s:blue, "", "")
 
 	" Git
-	call <SID>X("diffAdded", s:green, "", "")
-	call <SID>X("diffRemoved", s:red, "", "")
-	call <SID>X("gitcommitSummary", "", "", "bold")
+	call <SID>X('diffAdded', s:green, '', '')
+	call <SID>X('diffRemoved', s:red, '', '')
+	call <SID>X('gitcommitSummary', '', '', 'bold')
 
 	" Delete Functions
 	delf <SID>X
