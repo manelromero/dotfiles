@@ -8,10 +8,15 @@ set visualbell
 
 " Tab and indentation
 set tabstop=2
-set softtabstop=4
+set softtabstop=2
 set expandtab
 set autoindent
 set shiftwidth=2
+
+" Folding
+set foldmethod=indent   
+set foldnestmax=1
+set nofoldenable
 
 set wildmenu
 
@@ -50,6 +55,8 @@ nmap <leader>w :w<cr>
 nmap <leader>s :wq<cr>
 nmap <leader>q :q!<cr>
 nmap <leader>e :Explore<cr>
+nmap <leader>p "0p
+nmap <leader>P "0P
 
 " Colorscheme
 colorscheme Tomorrow-Night 
@@ -69,8 +76,6 @@ Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plugin 'junegunn/fzf.vim'
 Plugin 'w0rp/ale'
 Plugin 'vim-ruby/vim-ruby'
-Plugin 'ngmy/vim-rubocop'
-Plugin 'johngrib/vim-game-code-break'
 Plugin 'jiangmiao/auto-pairs'
 call vundle#end()
 
