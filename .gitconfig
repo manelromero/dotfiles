@@ -5,3 +5,5 @@
 	rebase = true
 [rerere]
 	enabled = true
+[core]
+	excludesfile = /Users/manel/.gitignore_global

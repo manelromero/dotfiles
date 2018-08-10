@@ -5,6 +5,7 @@ set number
 set cursorline
 set backspace=indent,eol,start
 set visualbell
+set wildmenu
 
 " Tab and indentation
 set tabstop=2
@@ -17,8 +18,6 @@ set shiftwidth=2
 set foldmethod=indent   
 set foldnestmax=1
 set nofoldenable
-
-set wildmenu
 
 " Status line
 set laststatus=2
