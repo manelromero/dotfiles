@@ -1,14 +1,13 @@
 " Premier League theme
 
 " Colors
-let s:background = '38003c'
+let s:background = '340040'
 let s:window = '5e5e5e'
 let s:line = '3a3a3a'
 let s:selection = '666666'
-let s:foreground = 'cccccc'
-let s:white = 'ffffff'
+let s:foreground = 'ffffff'
 let s:comment = '999999'
-let s:red = 'e90052'
+let s:red = 'ff025b'
 let s:orange = 'de935f'
 let s:yellow = 'f0c674'
 let s:green = '00ff85'
@@ -21,7 +20,7 @@ let s:grey = '7a7a7a'
 hi clear
 syntax reset
 
-let g:colors_name = 'Tomorrow-Night'
+let g:colors_name = 'Premier-League'
 
 if has('gui_running') || &t_Co == 88 || &t_Co == 256
 	" Returns an approximate grey index for the given grey level

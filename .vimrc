@@ -1,11 +1,11 @@
-syntax on
-
 " Editor
+syntax on
 set number
 set cursorline
 set backspace=indent,eol,start
 set visualbell
 set wildmenu
+set showcmd
 
 " Tab and indentation
 set tabstop=2
@@ -57,11 +57,13 @@ nmap <leader>e :Explore<cr>
 nmap <leader>p "0p
 nmap <leader>P "0P
 
+" Window change
+nmap <leader>l <C-W>w
+
 " Colorscheme
 colorscheme Tomorrow-Night 
 
 " Vundle
-set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 
