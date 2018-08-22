@@ -7,6 +7,9 @@ set visualbell
 set wildmenu
 set showcmd
 
+" Use old regexp engine or Ruby files will be very slow
+set regexpengine=1
+
 " Tab and indentation
 set tabstop=2
 set softtabstop=2
@@ -46,8 +49,8 @@ set incsearch
 set hlsearch
 nmap <leader><space> :nohl<cr>
 
-" Clipboard
-let &clipboard = has('unnamedplus') ? 'unnamedplus' : 'unnamed'
+" Use the system clipboard
+set clipboard=unnamed
 
 " Some shortcuts
 nmap <leader>w :w<cr>
