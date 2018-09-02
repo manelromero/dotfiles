@@ -21,7 +21,7 @@ let s:grey = '7a7a7a'
 hi clear
 syntax reset
 
-let g:colors_name = 'Tomorrow-Night'
+let g:colors_name = 'Manel'
 
 " Returns an approximate grey index for the given grey level
 fun <SID>grey_number(x)
@@ -209,6 +209,7 @@ call <SID>X('rubyInterpolationDelimiter', s:orange, '', '')
 call <SID>X('rubyAccess', s:red, '', '')
 call <SID>X('rubyConditional', s:purple, '', '')
 call <SID>X('rubyInclude', s:blue, '', '')
+call <SID>X('rubyRegexpSpecial', s:orange, '', '')
 
 " JavaScript Highlighting
 call <SID>X('jsImport', s:blue, '', '')

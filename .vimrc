@@ -65,7 +65,7 @@ nmap <leader>b :Buffers<cr>
 nmap <leader>l <C-W>w
 
 " Colorscheme
-colorscheme Tomorrow-Night 
+colorscheme Manel 
 
 " Vundle
 filetype off
