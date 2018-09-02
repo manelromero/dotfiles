@@ -7,7 +7,7 @@ set visualbell
 set wildmenu
 set showcmd
 
-" Use old regexp engine or Ruby files will be very slow
+" Use old regexp engine or editing Ruby files will be slow
 set regexpengine=1
 
 " Tab and indentation
@@ -59,6 +59,7 @@ nmap <leader>q :q!<cr>
 nmap <leader>e :Explore<cr>
 nmap <leader>p "0p
 nmap <leader>P "0P
+nmap <leader>b :Buffers<cr>
 
 " Window change
 nmap <leader>l <C-W>w
