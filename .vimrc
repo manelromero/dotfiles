@@ -36,23 +36,21 @@ set directory=~/.vim/temp
 set backupdir=~/.vim/temp
 set undodir=~/.vim/temp
 
-" Leader
-let mapleader = ','
-
-" Cursor
-let &t_SI = "\<Esc>]50;CursorShape=2\x7"
-let &t_SR = "\<Esc>]50;CursorShape=2\x7"
-let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-
 " Search
 set incsearch
 set hlsearch
-nmap <leader><space> :nohl<cr>
 
 " Use the system clipboard
 set clipboard=unnamed
 
+" Leader
+let mapleader = ','
+
 " Some shortcuts
+nmap <leader>f :Files<cr>
+nmap <leader>j :ALEFix<cr>
+nmap <leader>l <C-W>w
+nmap <leader><space> :nohl<cr>
 nmap <leader>w :w<cr>
 nmap <leader>s :wq<cr>
 nmap <leader>q :q!<cr>
@@ -60,9 +58,6 @@ nmap <leader>e :Explore<cr>
 nmap <leader>p "0p
 nmap <leader>P "0P
 nmap <leader>b :Buffers<cr>
-
-" Window change
-nmap <leader>l <C-W>w
 
 " Colorscheme
 colorscheme Manel 
@@ -91,7 +86,13 @@ let g:ale_linters = {
 \  'javascript': ['eslint', 'prettier'],
 \  'json': ['jsonlint', 'prettier'],
 \  'css': ['csslint', 'prettier', 'stylelint'],
-\  'html': ['HTMLHint']
+\  'html': ['HTMLHint'],
+\  'ruby': ['rubocop'],
+\  'make': ['checkmake']
+\}
+let g:ale_fixers = {
+\  'javascript': ['eslint'],
+\  'ruby': ['rubocop']
 \}
 let g:ale_linters_explicit = 1
 
@@ -101,11 +102,7 @@ let g:gitgutter_sign_modified = '∙'
 let g:gitgutter_sign_removed = '-'
 let g:gitgutter_sign_modified_removed = '∙'
 
-" fzf
-nmap <leader>f :Files<cr>
-
 " ALE
-nmap <leader>j :ALEFix eslint<cr>
 let g:ale_sign_error = '>'
 let g:ale_sign_warning = '-'
 highlight link ALEError Error 
