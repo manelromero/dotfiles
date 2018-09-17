@@ -93,6 +93,9 @@ alias images="docker image ls -f 'dangling=true'"
 # Autojump
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
+# 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # Activate colors
 export LSCOLORS=dxfxCxDxbxegedabagaced
 
