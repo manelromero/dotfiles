@@ -77,6 +77,7 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'w0rp/ale'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'sheerun/vim-polyglot'
 call vundle#end()
 
 filetype plugin indent on
@@ -92,6 +93,7 @@ let g:ale_linters = {
 \}
 let g:ale_fixers = {
 \  'javascript': ['eslint'],
+\  'json': ['fixjson'],
 \  'ruby': ['rubocop']
 \}
 let g:ale_linters_explicit = 1
