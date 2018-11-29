@@ -7,3 +7,5 @@
 	enabled = true
 [core]
 	excludesfile = /Users/manel/.gitignore_global
+[alias]
+	pushf = push --force-with-lease
