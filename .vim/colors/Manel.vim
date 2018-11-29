@@ -196,10 +196,11 @@ call <SID>X("Include", s:blue, "", "")
 
 " Ruby Highlighting
 call <SID>X('rubyModuleName', s:orange, '', '')
-call <SID>X('rubyClassName', s:blue, '', '')
+call <SID>X('rubyClassName', s:yellow, '', '')
 call <SID>X('rubyMethod', s:blue, '', '')
 call <SID>X('rubySymbol', s:green, '', '')
 call <SID>X('rubyControl', s:red, '', '')
+call <SID>X('rubyDefine', s:purple, '', '')
 call <SID>X('rubyString', s:foreground, '', '')
 call <SID>X('rubyStringDelimiter', s:foreground, '', '')
 call <SID>X('rubyConstant', s:yellow, '', '')
@@ -237,10 +238,9 @@ call <SID>X('jsUndefined', s:red, '', '')
 
 " HTML Highlighting
 call <SID>X('htmlTag', s:foreground, '', '')
+call <SID>X('htmlEndTag', s:foreground, '', '')
 call <SID>X('htmlTagName', s:blue, '', '')
-call <SID>X('htmlArg', s:blue, '', '')
-call <SID>X('htmlScriptTag', s:red, '', '')
-call <SID>X('htmlIdentifier', s:blue, '', '')
+call <SID>X('htmlArg', s:orange, '', '')
 
 " Git
 call <SID>X('diffAdded', s:green, '', '')
