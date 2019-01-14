@@ -93,7 +93,7 @@ alias images="docker image ls -f 'dangling=true'"
 # Autojump
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
-# 
+# Map Ctrl + R
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Activate colors
@@ -101,6 +101,7 @@ export LSCOLORS=dxfxCxDxbxegedabagaced
 
 # Powerlevel theme
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
+POWERLEVEL9K_VCS_HIDE_TAGS=true
 POWERLEVEL9K_CONTEXT_TEMPLATE="%n"
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 POWERLEVEL9K_DISABLE_RPROMPT=true
@@ -120,3 +121,10 @@ POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND="232"
 POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND="220"
 POWERLEVEL9K_VCS_MODIFIED_FOREGROUND="232"
 POWERLEVEL9K_VCS_MODIFIED_BACKGROUND="222"
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh

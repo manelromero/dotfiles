@@ -212,6 +212,10 @@ call <SID>X('rubyConditional', s:purple, '', '')
 call <SID>X('rubyInclude', s:blue, '', '')
 call <SID>X('rubyRegexpSpecial', s:orange, '', '')
 call <SID>X('rubyRspecKeyword', s:purple, '', '')
+call <SID>X('rubyBlockParameter', s:orange, '', '')
+call <SID>X('rubyMethodBlock', s:foreground, '', '')
+call <SID>X('rubyRspecKeyword', s:blue, '', '')
+call <SID>X('rubyFunction', s:blue, '', '')
 
 " JavaScript Highlighting
 call <SID>X('jsImport', s:blue, '', '')
@@ -219,7 +223,7 @@ call <SID>X('jsExport', s:blue, '', '')
 call <SID>X('jsObjectKey', s:orange, '', '')
 call <SID>X('jsObjectValue', s:yellow, '', '')
 call <SID>X('jsObjectProp', s:foreground, '', '')
-call <SID>X('jsFunction', s:identifier, '', '')
+call <SID>X('jsFunction', s:purple, '', '')
 call <SID>X('jsArrowFunction', s:blue, '', '')
 call <SID>X('jsArrowFuncArgs', s:yellow, '', '')
 call <SID>X('jsFuncCall', s:blue, '', '')
@@ -235,12 +239,18 @@ call <SID>X('jsReturn', s:red, '', '')
 call <SID>X('jsComment', s:comment, '', '')
 call <SID>X('jsNull', s:red, '', '')
 call <SID>X('jsUndefined', s:red, '', '')
+call <SID>X('jsExtendsKeyword', s:yellow, '', '')
 
 " HTML Highlighting
 call <SID>X('htmlTag', s:foreground, '', '')
 call <SID>X('htmlEndTag', s:foreground, '', '')
 call <SID>X('htmlTagName', s:blue, '', '')
 call <SID>X('htmlArg', s:orange, '', '')
+
+" XML Highlighting
+call <SID>X('xmlTag', s:blue, '', '')
+call <SID>X('xmlTagName', s:blue, '', '')
+call <SID>X('xmlAttrib', s:yellow, '', '')
 
 " Git
 call <SID>X('diffAdded', s:green, '', '')

@@ -11,11 +11,11 @@ set showcmd
 set regexpengine=1
 
 " Tab and indentation
-set tabstop=2
-set softtabstop=2
 set expandtab
-set autoindent
+set softtabstop=2
 set shiftwidth=2
+set autoindent
+set tabstop=2
 
 " Folding
 set foldmethod=indent   
