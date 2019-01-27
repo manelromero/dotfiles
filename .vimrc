@@ -26,6 +26,7 @@ set nofoldenable
 set laststatus=2
 set statusline=
 set statusline+=%1*\ %l/%L
+set statusline+=\ [%02c]
 set statusline+=%2*\ %F
 set statusline+=\ %m
 
@@ -54,7 +55,7 @@ nmap <leader><space> :nohl<cr>
 nmap <leader>w :w<cr>
 nmap <leader>s :wq<cr>
 nmap <leader>q :q!<cr>
-nmap <leader>e :Explore<cr>
+nmap <leader>e :Explore<cr>:e<cr>
 nmap <leader>p "0p
 nmap <leader>P "0P
 nmap <leader>b :Buffers<cr>
