@@ -60,8 +60,18 @@ nmap <leader>p "0p
 nmap <leader>P "0P
 nmap <leader>b :Buffers<cr>
 
+" Disable some keys
+imap <Up> <nop>
+imap <Down> <nop>
+imap <Left> <nop>
+imap <Right> <nop>
+
 " Colorscheme
 colorscheme Manel 
+
+" Enable completion where available.
+" This setting must be set before ALE is loaded.
+let g:ale_completion_enabled = 1
 
 " Vundle
 filetype off
@@ -69,13 +79,13 @@ set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'w0rp/ale'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plugin 'junegunn/fzf.vim'
-Plugin 'w0rp/ale'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'sheerun/vim-polyglot'
@@ -83,14 +93,15 @@ call vundle#end()
 
 filetype plugin indent on
 
-" Define which linters to use 
+" ALE
 let g:ale_linters = {
 \  'javascript': ['eslint', 'prettier'],
 \  'json': ['jsonlint', 'prettier'],
 \  'css': ['csslint', 'prettier', 'stylelint'],
 \  'html': ['HTMLHint'],
 \  'ruby': ['rubocop'],
-\  'make': ['checkmake']
+\  'make': ['checkmake'],
+\  'haml': ['haml-lint']
 \}
 let g:ale_fixers = {
 \  'javascript': ['eslint'],
@@ -98,17 +109,15 @@ let g:ale_fixers = {
 \  'ruby': ['rubocop']
 \}
 let g:ale_linters_explicit = 1
-
-" GitGutter
-let g:gitgutter_sign_added = '+'
-let g:gitgutter_sign_modified = '∙'
-let g:gitgutter_sign_removed = '-'
-let g:gitgutter_sign_modified_removed = '∙'
-
-" ALE
 let g:ale_sign_error = '>'
 let g:ale_sign_warning = '-'
 highlight link ALEError Error 
 highlight link ALEWarning Warning
 highlight clear ALEErrorSign
 highlight clear ALEWarningSign
+
+" GitGutter
+let g:gitgutter_sign_added = '+'
+let g:gitgutter_sign_modified = '*'
+let g:gitgutter_sign_removed = '-'
+let g:gitgutter_sign_modified_removed = '*'
