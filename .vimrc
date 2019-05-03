@@ -2,20 +2,25 @@
 syntax on
 set number
 set cursorline
-set backspace=indent,eol,start
-set visualbell
+set backspace=start
 set wildmenu
 set showcmd
-
-" Use old regexp engine or editing Ruby files will be slow
-set regexpengine=1
+set visualbell
+colorscheme Manel
 
 " Tab and indentation
+set autoindent
 set expandtab
 set softtabstop=2
 set shiftwidth=2
-set autoindent
 set tabstop=2
+
+" Set different position for window splits
+set splitbelow
+set splitright
+
+" Disable recognition of keys sending an escape sequence when in insert mode
+set noesckeys
 
 " Folding
 set foldmethod=indent   
@@ -33,7 +38,6 @@ set statusline+=\ %m
 " Backup 
 set backup
 set noswapfile
-set directory=~/.vim/temp
 set backupdir=~/.vim/temp
 set undodir=~/.vim/temp
 
@@ -60,18 +64,22 @@ nmap <leader>p "0p
 nmap <leader>P "0P
 nmap <leader>b :Buffers<cr>
 
-" Disable some keys
+" Disable cursor keys
+nmap <Up> <nop>
+nmap <Down> <nop>
+nmap <Left> <nop>
+nmap <Right> <nop>
 imap <Up> <nop>
 imap <Down> <nop>
 imap <Left> <nop>
 imap <Right> <nop>
 
-" Colorscheme
-colorscheme Manel 
-
 " Enable completion where available.
 " This setting must be set before ALE is loaded.
 let g:ale_completion_enabled = 1
+
+" Set CSV delimiter
+let g:polyglot_disabled = ['csv']
 
 " Vundle
 filetype off
@@ -94,6 +102,7 @@ call vundle#end()
 filetype plugin indent on
 
 " ALE
+let g:ale_linters_explicit = 1
 let g:ale_linters = {
 \  'javascript': ['eslint', 'prettier'],
 \  'json': ['jsonlint', 'prettier'],
@@ -108,7 +117,6 @@ let g:ale_fixers = {
 \  'json': ['fixjson'],
 \  'ruby': ['rubocop']
 \}
-let g:ale_linters_explicit = 1
 let g:ale_sign_error = '>'
 let g:ale_sign_warning = '-'
 highlight link ALEError Error 
@@ -121,3 +129,12 @@ let g:gitgutter_sign_added = '+'
 let g:gitgutter_sign_modified = '*'
 let g:gitgutter_sign_removed = '-'
 let g:gitgutter_sign_modified_removed = '*'
+
+" Just a VimScript test
+function! s:ASCIIFor()
+  echo 'Enter the character that you need its ASCII code'
+  let result = getchar()
+  echo 'The ASCII code is ' . result
+endfunction
+
+command! ASCIIFor call s:ASCIIFor()
