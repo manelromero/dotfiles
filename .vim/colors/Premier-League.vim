@@ -1,19 +1,18 @@
-" Manel theme
-" Based on Tomorrow-Night theme
+" Premier League theme
 
 " Colors
 let s:background = '262626'
-let s:foreground = 'cccccc'
+let s:foreground = 'eeeeee'
 let s:window = '5e5e5e'
 let s:selection = '666666'
 let s:line = '3a3a3a'
 let s:white = 'ffffff'
 let s:comment = '999999'
-let s:red = 'cc6666'
+let s:red = 'f9004d'
 let s:orange = 'de935f'
-let s:yellow = 'f0c674'
-let s:green = 'b5bd68'
-let s:blue = '81a2be'
+let s:yellow = 'e7ff2b'
+let s:green = '30ff79'
+let s:blue = '2df0fc'
 let s:purple = 'b294bb'
 let s:identifier = 'ae00ff'
 let s:grey = '7a7a7a'
@@ -21,7 +20,7 @@ let s:grey = '7a7a7a'
 hi clear
 syntax reset
 
-let g:colors_name = 'Manel'
+let g:colors_name = 'Premier-League'
 
 " Returns an approximate grey index for the given grey level
 fun <SID>grey_number(x)
@@ -147,7 +146,7 @@ endfun
 " Vim Highlighting
 call <SID>X('Normal', s:foreground, s:background, '')
 call <SID>X('Error', s:white, s:blue, '')
-call <SID>X('Warning', s:foreground, s:grey, '')
+call <SID>X('Warning', s:white, s:purple, '')
 call <SID>X('User1', s:blue, s:selection, '')
 call <SID>X('User2', s:yellow, s:selection, '')
 call <SID>X('Visual', '', s:selection, '')
@@ -196,10 +195,11 @@ call <SID>X("Include", s:blue, "", "")
 
 " Ruby Highlighting
 call <SID>X('rubyModuleName', s:orange, '', '')
-call <SID>X('rubyClassName', s:blue, '', '')
+call <SID>X('rubyClassName', s:yellow, '', '')
 call <SID>X('rubyMethod', s:blue, '', '')
 call <SID>X('rubySymbol', s:green, '', '')
 call <SID>X('rubyControl', s:red, '', '')
+call <SID>X('rubyDefine', s:purple, '', '')
 call <SID>X('rubyString', s:foreground, '', '')
 call <SID>X('rubyStringDelimiter', s:foreground, '', '')
 call <SID>X('rubyConstant', s:yellow, '', '')
@@ -210,6 +210,11 @@ call <SID>X('rubyAccess', s:red, '', '')
 call <SID>X('rubyConditional', s:purple, '', '')
 call <SID>X('rubyInclude', s:blue, '', '')
 call <SID>X('rubyRegexpSpecial', s:orange, '', '')
+call <SID>X('rubyRspecKeyword', s:purple, '', '')
+call <SID>X('rubyBlockParameter', s:orange, '', '')
+call <SID>X('rubyMethodBlock', s:foreground, '', '')
+call <SID>X('rubyRspecKeyword', s:blue, '', '')
+call <SID>X('rubyFunction', s:blue, '', '')
 
 " JavaScript Highlighting
 call <SID>X('jsImport', s:blue, '', '')
@@ -217,8 +222,8 @@ call <SID>X('jsExport', s:blue, '', '')
 call <SID>X('jsObjectKey', s:orange, '', '')
 call <SID>X('jsObjectValue', s:yellow, '', '')
 call <SID>X('jsObjectProp', s:foreground, '', '')
-call <SID>X('jsFunction', s:identifier, '', '')
-call <SID>X('jsArrowFunction', s:blue, '', 'bold')
+call <SID>X('jsFunction', s:purple, '', '')
+call <SID>X('jsArrowFunction', s:blue, '', '')
 call <SID>X('jsArrowFuncArgs', s:yellow, '', '')
 call <SID>X('jsFuncCall', s:blue, '', '')
 call <SID>X('jsClassFuncName', s:orange, '', '')
@@ -233,13 +238,18 @@ call <SID>X('jsReturn', s:red, '', '')
 call <SID>X('jsComment', s:comment, '', '')
 call <SID>X('jsNull', s:red, '', '')
 call <SID>X('jsUndefined', s:red, '', '')
+call <SID>X('jsExtendsKeyword', s:yellow, '', '')
 
 " HTML Highlighting
 call <SID>X('htmlTag', s:foreground, '', '')
+call <SID>X('htmlEndTag', s:foreground, '', '')
 call <SID>X('htmlTagName', s:blue, '', '')
-call <SID>X('htmlArg', s:blue, '', '')
-call <SID>X('htmlScriptTag', s:red, '', '')
-call <SID>X('htmlIdentifier', s:blue, '', '')
+call <SID>X('htmlArg', s:orange, '', '')
+
+" XML Highlighting
+call <SID>X('xmlTag', s:blue, '', '')
+call <SID>X('xmlTagName', s:blue, '', '')
+call <SID>X('xmlAttrib', s:yellow, '', '')
 
 " Git
 call <SID>X('diffAdded', s:green, '', '')
