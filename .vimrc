@@ -90,11 +90,11 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'w0rp/ale'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
+Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plugin 'junegunn/fzf.vim'
-Plugin 'vim-ruby/vim-ruby'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'sheerun/vim-polyglot'
 call vundle#end()
@@ -130,7 +130,7 @@ let g:gitgutter_sign_modified = '*'
 let g:gitgutter_sign_removed = '-'
 let g:gitgutter_sign_modified_removed = '*'
 
-" Just a VimScript test
+" Just some VimScript tests
 function! s:ASCIIFor()
   echo 'Enter the character that you need its ASCII code'
   let result = getchar()
@@ -138,3 +138,9 @@ function! s:ASCIIFor()
 endfunction
 
 command! ASCIIFor call s:ASCIIFor()
+
+function! g:CreateRubyMethod()
+  execute "normal! yawidef\<space>\<esc>oend\<esc>O"
+endfunction
+
+nmap <leader>m :call g:CreateRubyMethod()<cr>

@@ -4,7 +4,6 @@
 " Colors
 let s:background = '262626'
 let s:foreground = 'cccccc'
-let s:window = '5e5e5e'
 let s:selection = '666666'
 let s:line = '3a3a3a'
 let s:white = 'ffffff'
@@ -145,34 +144,36 @@ fun <SID>X(group, fg, bg, attr)
 endfun
 
 " Vim Highlighting
-call <SID>X('Normal', s:foreground, s:background, '')
+call <SID>X('CursorLine', '', s:line, 'none')
+call <SID>X('Directory', s:blue, '', '')
 call <SID>X('Error', s:white, s:blue, '')
-call <SID>X('Warning', s:white, s:purple, '')
+call <SID>X('ErrorMsg', s:white, s:red, '')
+call <SID>X('FoldColumn', '', s:background, '')
+call <SID>X('Folded', s:comment, s:background, '')
+call <SID>X('LineNr', s:selection, '', '')
+call <SID>X('MatchParen', '', s:selection, '')
+call <SID>X('ModeMsg', s:yellow, '', '')
+call <SID>X('MoreMsg', s:comment, '', '')
+call <SID>X('NonText', s:selection, '', '')
+call <SID>X('Normal', s:foreground, s:background, '')
+call <SID>X('PMenu', s:foreground, s:background, '')
+call <SID>X('PMenuSel', s:foreground, s:background, 'reverse')
+call <SID>X('PmenuSbar', '', s:selection, '')
+call <SID>X('Question', s:green, '', '')
+call <SID>X('Search', s:background, s:blue, '')
+call <SID>X('SignColumn', '', s:background, 'none')
+call <SID>X('SpecialKey', s:selection, '', '')
+call <SID>X('StatusLine', s:selection, s:selection, '')
+call <SID>X('StatusLineNC', s:selection, s:selection, '')
+call <SID>X('TabLine', s:selection, s:foreground, 'reverse')
+call <SID>X('TabLineFill', s:selection, s:foreground, 'reverse')
 call <SID>X('User1', s:blue, s:selection, '')
 call <SID>X('User2', s:yellow, s:selection, '')
+call <SID>X('VertSplit', s:selection, s:selection, '')
 call <SID>X('Visual', '', s:selection, '')
-call <SID>X('CursorLine', '', s:line, 'none')
-call <SID>X("vimCommand", s:red, "", "none")
-call <SID>X("LineNr", s:selection, "", "")
-call <SID>X('Search', s:background, s:blue, '')
-call <SID>X("NonText", s:selection, "", "")
-call <SID>X("SpecialKey", s:selection, "", "")
-call <SID>X("TabLine", s:window, s:foreground, "reverse")
-call <SID>X("TabLineFill", s:window, s:foreground, "reverse")
-call <SID>X("StatusLine", s:window, s:yellow, "reverse")
-call <SID>X("StatusLineNC", s:window, s:foreground, "reverse")
-call <SID>X("VertSplit", s:window, s:window, "none")
-call <SID>X("Directory", s:blue, "", "")
-call <SID>X("ModeMsg", s:green, "", "")
-call <SID>X("MoreMsg", s:green, "", "")
-call <SID>X("Question", s:green, "", "")
-call <SID>X("WarningMsg", s:red, "", "")
-call <SID>X("MatchParen", "", s:selection, "")
-call <SID>X("Folded", s:comment, s:background, "")
-call <SID>X("FoldColumn", "", s:background, "")
-call <SID>X("PMenu", s:foreground, s:selection, "none")
-call <SID>X("PMenuSel", s:foreground, s:selection, "reverse")
-call <SID>X("SignColumn", "", s:background, "none")
+call <SID>X('Warning', s:white, s:purple, '')
+call <SID>X('WarningMsg', s:red, '', '')
+call <SID>X('vimCommand', s:red, '', '')
 
 " Standard Highlighting
 call <SID>X("Comment", s:comment, "", "")
