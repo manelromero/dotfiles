@@ -52,27 +52,29 @@ set clipboard=unnamed
 let mapleader = ','
 
 " Some shortcuts
-nmap <leader>f :Files<cr>
-nmap <leader>j :ALEFix<cr>
-nmap <leader>l <C-W>w
-nmap <leader><space> :nohl<cr>
-nmap <leader>w :w<cr>
-nmap <leader>s :wq<cr>
-nmap <leader>q :q!<cr>
-nmap <leader>e :Explore<cr>:e<cr>
-nmap <leader>p "0p
-nmap <leader>P "0P
-nmap <leader>b :Buffers<cr>
+nnoremap <leader>f :Files<cr>
+nnoremap <leader>j :ALEFix<cr>
+nnoremap <leader>l <c-w>w
+nnoremap <leader><space> :nohl<cr>
+nnoremap <leader>w :w<cr>
+nnoremap <leader>s :wq<cr>
+nnoremap <leader>q :q!<cr>
+nnoremap <leader>e :Explore<cr>:e<cr>
+nnoremap <leader>p "0p
+nnoremap <leader>P "0P
+nnoremap <leader>b :Buffers<cr>
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
 
 " Disable cursor keys
-nmap <Up> <nop>
-nmap <Down> <nop>
-nmap <Left> <nop>
-nmap <Right> <nop>
-imap <Up> <nop>
-imap <Down> <nop>
-imap <Left> <nop>
-imap <Right> <nop>
+nnoremap <Up> <nop>
+nnoremap <Down> <nop>
+nnoremap <Left> <nop>
+nnoremap <Right> <nop>
+inoremap <Up> <nop>
+inoremap <Down> <nop>
+inoremap <Left> <nop>
+inoremap <Right> <nop>
 
 " Enable completion where available.
 " This setting must be set before ALE is loaded.
@@ -130,17 +132,21 @@ let g:gitgutter_sign_modified = '*'
 let g:gitgutter_sign_removed = '-'
 let g:gitgutter_sign_modified_removed = '*'
 
+" Detect syntax name for item under the cursor
+function! g:SyntaxItem()
+  echo synIDattr(synID(line('.'), col('.'), 1), 'name')
+endfunction
+nnoremap <leader>? :call g:SyntaxItem()<cr>
+
 " Just some VimScript tests
 function! s:ASCIIFor()
   echo 'Enter the character that you need its ASCII code'
   let result = getchar()
   echo 'The ASCII code is ' . result
 endfunction
-
 command! ASCIIFor call s:ASCIIFor()
 
 function! g:CreateRubyMethod()
   execute "normal! yawidef\<space>\<esc>oend\<esc>O"
 endfunction
-
-nmap <leader>m :call g:CreateRubyMethod()<cr>
+nnoremap <leader>m :call g:CreateRubyMethod()<cr>
