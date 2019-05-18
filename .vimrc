@@ -29,11 +29,11 @@ set nofoldenable
 
 " Status line
 set laststatus=2
-set statusline=
-set statusline+=%1*\ %l/%L
-set statusline+=\ [%02c]
-set statusline+=%2*\ %F
-set statusline+=\ %m
+set statusline=%1*\ %l/%L    " line of lines
+set statusline+=\ [%02c]     " column number
+set statusline+=\ B:%-2n     " buffer number
+set statusline+=%2*\ %.50F   " file path and name
+set statusline+=\ %m         " modified flag
 
 " Backup 
 set backup
@@ -63,8 +63,10 @@ nnoremap <leader>e :Explore<cr>:e<cr>
 nnoremap <leader>p "0p
 nnoremap <leader>P "0P
 nnoremap <leader>b :Buffers<cr>
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>cv :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <leader>' bi'<esc>ea'<esc>l
+nnoremap <leader>" bi"<esc>ea"<esc>l
 
 " Disable cursor keys
 nnoremap <Up> <nop>

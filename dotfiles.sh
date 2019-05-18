@@ -9,6 +9,7 @@ cp ~/.git-completion.bash ${DESTINATION_PATH}.git-completion.bash
 cp ~/.git-prompt.sh ${DESTINATION_PATH}.git-prompt.sh
 cp ~/.gitconfig ${DESTINATION_PATH}.gitconfig
 cp ~/.gitignore_global ${DESTINATION_PATH}.gitignore_global
+cp ~/.tmux.conf ${DESTINATION_PATH}.tmux.conf
 cp ~/.vimrc ${DESTINATION_PATH}.vimrc
 cp -r ~/.vim/colors ${DESTINATION_PATH}.vim/
 cp ~/.zshrc ${DESTINATION_PATH}.zshrc

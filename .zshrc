@@ -1,4 +1,5 @@
 export ZSH=/Users/manel/.oh-my-zsh
+export TERM="xterm-256color"
 ZSH_THEME="powerlevel9k/powerlevel9k"
 source $ZSH/oh-my-zsh.sh
 
@@ -9,9 +10,16 @@ alias path="echo $PATH | tr ':' '\n'"
 alias et="sudo rm -rf ~/.Trash/*"
 alias glo="git log --oneline"
 alias images="docker image ls -f 'dangling=true'"
+alias fw="tmux a -t flywire"
 
-# Autojump
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
+# Application aliases
+alias core="cd ~/code/platform/apps/core"
+alias payex="cd ~/code/platform/apps/payex_web"
+alias recon="cd ~/code/platform/apps/recon"
+alias reconciliation="cd ~/code/platform/apps/reconciliation"
+alias operations="cd ~/code/platform/apps/operations"
+alias mcreconciliation="cd ~/code/victoria/missioncontrol-reconciliation"
+alias mcmatching="cd ~/code/victoria/missioncontrol-matching"
 
 # Map Ctrl + R
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
