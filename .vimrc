@@ -2,11 +2,15 @@
 syntax on
 set number
 set cursorline
-set backspace=start
+set backspace=indent,eol,start
 set wildmenu
 set showcmd
 set visualbell
 colorscheme Manel
+
+" File encoding
+set encoding=utf-8
+set fileencoding=utf-8
 
 " Tab and indentation
 set autoindent
@@ -42,8 +46,8 @@ set backupdir=~/.vim/temp
 set undodir=~/.vim/temp
 
 " Search
-set incsearch
 set hlsearch
+set incsearch
 
 " Use the system clipboard
 set clipboard=unnamed

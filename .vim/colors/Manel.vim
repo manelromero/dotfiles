@@ -178,6 +178,14 @@ call <SID>X('vimContinue', s:grey, '', '')
 call <SID>X('vimFuncKey', s:purple, '', '')
 
 " Standard Highlighting
+call <SID>X('shDerefSimple', s:red, '', '')
+call <SID>X('shDoubleQuote', s:green, '', '')
+call <SID>X('shQuote', s:green, '', '')
+call <SID>X('shStatement', s:foreground, '', '')
+call <SID>X('shVar', s:orange, '', '')
+call <SID>X('shVariable', s:blue, '', '')
+
+" Standard Highlighting
 call <SID>X('Comment', s:comment, '', '')
 call <SID>X('Conditional', s:foreground, '', '')
 call <SID>X('Constant', s:orange, '', '')
