@@ -36,7 +36,7 @@ set laststatus=2
 set statusline=%1*\ %l/%L    " line of lines
 set statusline+=\ [%02c]     " column number
 set statusline+=\ B:%-2n     " buffer number
-set statusline+=%2*\ %.50F   " file path and name
+set statusline+=%2*\ %F      " file path and name
 set statusline+=\ %m         " modified flag
 
 " Backup 
@@ -64,6 +64,7 @@ nnoremap <leader>w :w<cr>
 nnoremap <leader>s :wq<cr>
 nnoremap <leader>q :q!<cr>
 nnoremap <leader>e :Explore<cr>:e<cr>
+nnoremap <leader>h q:
 nnoremap <leader>p "0p
 nnoremap <leader>P "0P
 nnoremap <leader>b :Buffers<cr>
