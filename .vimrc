@@ -72,6 +72,7 @@ nnoremap <leader>cv :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <leader>' bi'<esc>ea'<esc>l
 nnoremap <leader>" bi"<esc>ea"<esc>l
+nnoremap <leader>a :Ag 
 
 " Disable cursor keys
 nnoremap <Up> <nop>
