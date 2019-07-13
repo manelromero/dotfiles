@@ -11,7 +11,6 @@ alias containers="docker container ls --format 'table{{.Image}}\t{{.Names}}\t{{.
 
 # Application aliases
 alias core="cd ~/code/platform/apps/core"
-alias payex="cd ~/code/platform/apps/payex_web"
 alias recon="cd ~/code/platform/apps/recon"
 alias reconciliation="cd ~/code/platform/apps/reconciliation"
 alias operations="cd ~/code/platform/apps/operations"
@@ -19,6 +18,7 @@ alias partners="cd ~/code/platform/apps/partners"
 alias filer="cd ~/code/platform/apps/filer"
 alias api="cd ~/code/platform/apps/api"
 alias victoria="cd ~/code/victoria"
+alias payex="cd ~/code/victoria/payex-web"
 alias mcreconciliation="cd ~/code/victoria/missioncontrol-reconciliation"
 alias mcmatching="cd ~/code/victoria/missioncontrol-matching"
 alias mccommon="cd ~/code/victoria/missioncontrol-common"
