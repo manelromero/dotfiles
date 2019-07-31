@@ -1,3 +1,5 @@
+source ~/.bashrc
+
 # Aliases
 alias l="ls -la"
 alias c="clear"
@@ -28,6 +30,9 @@ alias end2end="cd ~/code/victoria/end2end"
 export TERM="xterm-256color"
 export CLICOLOR=1
 export LSCOLORS=dxfxCxDxbxegedabagaced
+
+# Locale
+export LANG=en_GB.UTF-8
 
 # Enable Git tab completion
 source ~/.git-completion.bash
