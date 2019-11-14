@@ -36,11 +36,11 @@ set nofoldenable
 
 " Status line
 set laststatus=2
-set statusline=%1*\ %l/%L    " line of lines
-set statusline+=\ [%02c]     " column number
-set statusline+=\ B:%-2n     " buffer number
-set statusline+=%2*\ %F      " file path and name
-set statusline+=\ %m         " modified flag
+set statusline=
+set statusline+=%1*\ %l/%L                      " line of lines
+set statusline+=\ [%02c]                        " column number
+set statusline+=%2*\ %F                         " file path and name
+set statusline+=\ %m                            " modified flag
 
 " Backup 
 set backup
@@ -87,12 +87,14 @@ inoremap <Down> <nop>
 inoremap <Left> <nop>
 inoremap <Right> <nop>
 
-" Enable completion where available.
-" This setting must be set before ALE is loaded.
+" Enable completion where available, must be set before ALE is loaded.
 let g:ale_completion_enabled = 1
 
 " Set CSV delimiter
 let g:polyglot_disabled = ['csv']
+
+" Hiding list for Netrw
+let g:netrw_list_hide= '.git/,node_modules'
 
 " Vundle
 filetype off
@@ -100,7 +102,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'w0rp/ale'
+Plugin 'dense-analysis/ale'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'vim-ruby/vim-ruby'
@@ -111,7 +113,6 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'sheerun/vim-polyglot'
 call vundle#end()
-
 filetype plugin indent on
 
 " ALE
@@ -126,7 +127,7 @@ let g:ale_linters = {
 \  'haml': ['haml-lint']
 \}
 let g:ale_fixers = {
-\  'javascript': ['eslint'],
+\  'javascript': ['eslint', 'prettier'],
 \  'json': ['fixjson'],
 \  'ruby': ['rubocop']
 \}

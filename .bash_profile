@@ -9,7 +9,8 @@ alias glo="git log --pretty=format:'%C(yellow)%h%Creset %s %Cgreen%an%Creset [%c
 alias images="docker image ls -f dangling=true"
 alias fw="tmux a -t flywire"
 alias manel="tmux a -t manel"
-alias containers="docker container ls --format 'table{{.Image}}\t{{.Names}}\t{{.Ports}}\t{{.Status}}'"
+alias containers="docker container ls -a --format 'table{{.Image}}\t{{.Names}}\t{{.Ports}}\t{{.Status}}'"
+alias prune="docker system prune --all --volumes"
 
 # Application aliases
 alias core="cd ~/code/platform/apps/core"
@@ -23,6 +24,7 @@ alias victoria="cd ~/code/victoria"
 alias payex="cd ~/code/victoria/payex-web"
 alias mcreconciliation="cd ~/code/victoria/missioncontrol-reconciliation"
 alias mcmatching="cd ~/code/victoria/missioncontrol-matching"
+alias mcpartners="cd ~/code/victoria/missioncontrol-partners"
 alias mccommon="cd ~/code/victoria/missioncontrol-common"
 alias end2end="cd ~/code/victoria/end2end"
 
