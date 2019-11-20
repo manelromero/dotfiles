@@ -2,10 +2,10 @@
 " Based on Tomorrow-Night theme
 
 " Colors
-let s:background = '262626'
 let s:foreground = 'cccccc'
+let s:background = '262626'
 let s:selection = '666666'
-let s:line = '3a3a3a'
+let s:line = '3c3c3c'
 let s:white = 'ffffff'
 let s:comment = '999999'
 let s:red = 'cc6666'
@@ -14,7 +14,6 @@ let s:yellow = 'f0c674'
 let s:green = 'b5bd68'
 let s:blue = '81a2be'
 let s:purple = 'b294bb'
-let s:identifier = 'ae00ff'
 let s:grey = '7a7a7a'
 
 hi clear
@@ -214,6 +213,8 @@ call <SID>X('Type', s:blue, '', 'none')
 call <SID>X('rubyAccess', s:red, '', '')
 call <SID>X('rubyBlockParameter', s:orange, '', '')
 call <SID>X('rubyBlockParameterList', s:orange, '', '')
+call <SID>X('rubyClass', s:purple, '', '')
+call <SID>X('rubyClassBlock', s:foreground, '', '')
 call <SID>X('rubyClassName', s:yellow, '', '')
 call <SID>X('rubyConditional', s:purple, '', '')
 call <SID>X('rubyConstant', s:yellow, '', '')
@@ -233,7 +234,7 @@ call <SID>X('rubyRspecKeyword', s:blue, '', '')
 call <SID>X('rubyRspecKeyword', s:purple, '', '')
 call <SID>X('rubyString', s:green, '', '')
 call <SID>X('rubyStringDelimiter', s:green, '', '')
-call <SID>X('rubySymbol', s:green, '', '')
+call <SID>X('rubySymbol', s:orange, '', '')
 
 " JavaScript Highlighting
 call <SID>X('jsArrowFuncArgs', s:yellow, '', '')
