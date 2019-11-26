@@ -18,8 +18,7 @@ window:
 scrolling:
   history: 20000
   multiplier: 3
-  faux_multiplier: 3
-  auto_scroll: false
+  auto_scroll: true
 
 tabspaces: 2
 
@@ -33,7 +32,7 @@ font:
   italic:
     family: Iosevka
     style: Italic
-  size: 18.0
+  size: 19.0
   offset:
     x: 0
     y: 0

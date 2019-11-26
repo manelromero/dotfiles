@@ -58,3 +58,6 @@ $grey\u \
 $orange\w\
 $yellow\$(__git_ps1 ' %s') \
 $reset> "
+
+# rbenv initialization
+eval "$(rbenv init -)"

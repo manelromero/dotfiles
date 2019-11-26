@@ -144,7 +144,7 @@ endfun
 
 " Vim Highlighting
 call <SID>X('CursorLine', '', s:line, 'none')
-call <SID>X('CursorLineNR', s:yellow, '', '')
+call <SID>X('CursorLineNr', s:yellow, '', 'none')
 call <SID>X('Directory', s:blue, '', '')
 call <SID>X('Error', s:white, s:blue, '')
 call <SID>X('ErrorMsg', s:white, s:red, '')
