@@ -15,6 +15,9 @@ language en_GB.UTF-8
 set encoding=utf-8
 set fileencoding=utf-8
 
+" Do not add a new line at the end of files
+set nofixendofline
+
 " Tab and indentation
 set autoindent
 set expandtab
