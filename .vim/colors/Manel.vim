@@ -7,6 +7,7 @@ let s:background = '262626'
 let s:selection = '666666'
 let s:line = '3c3c3c'
 let s:white = 'ffffff'
+let s:black = '000000'
 let s:comment = '999999'
 let s:red = 'cc6666'
 let s:orange = 'de935f'
@@ -158,20 +159,20 @@ call <SID>X('NonText', s:selection, '', '')
 call <SID>X('Normal', s:foreground, s:background, '')
 call <SID>X('PMenu', s:foreground, s:background, '')
 call <SID>X('PMenuSel', s:foreground, s:background, 'reverse')
-call <SID>X('PmenuSbar', '', s:selection, '')
+call <SID>X('PMenuSbar', '', s:selection, '')
 call <SID>X('Question', s:green, '', '')
 call <SID>X('Search', s:background, s:blue, '')
 call <SID>X('SignColumn', '', s:background, 'none')
 call <SID>X('SpecialKey', s:selection, '', '')
-call <SID>X('StatusLine', s:selection, s:foreground, '')
-call <SID>X('StatusLineNC', s:selection, s:foreground, '')
+call <SID>X('StatusLine', s:selection, s:foreground, 'reverse')
+call <SID>X('StatusLineNC', s:selection, s:grey, '')
 call <SID>X('TabLine', s:selection, s:foreground, 'reverse')
 call <SID>X('TabLineFill', s:selection, s:foreground, 'reverse')
 call <SID>X('User1', s:blue, s:selection, '')
 call <SID>X('User2', s:yellow, s:selection, '')
 call <SID>X('VertSplit', s:background, s:selection, '')
 call <SID>X('Visual', '', s:selection, '')
-call <SID>X('Warning', s:white, s:purple, '')
+call <SID>X('Warning', s:black, s:orange, '')
 call <SID>X('WarningMsg', s:red, '', '')
 call <SID>X('netrwClassify', s:blue, '', '')
 call <SID>X('netrwDir', s:blue, '', '')
@@ -261,10 +262,21 @@ call <SID>X('jsUndefined', s:red, '', '')
 call <SID>X('jsVaribleDef', s:blue, '', '')
 
 " HTML Highlighting
-call <SID>X('htmlTag', s:foreground, '', '')
-call <SID>X('htmlEndTag', s:foreground, '', '')
-call <SID>X('htmlTagName', s:blue, '', '')
 call <SID>X('htmlArg', s:orange, '', '')
+call <SID>X('htmlEndTag', s:foreground, '', '')
+call <SID>X('htmlH1', s:white, '', 'bold')
+call <SID>X('htmlH2', s:white, '', '')
+call <SID>X('htmlH3', s:white, '', '')
+call <SID>X('htmlH4', s:white, '', '')
+call <SID>X('htmlTag', s:foreground, '', '')
+call <SID>X('htmlTagName', s:blue, '', '')
+
+" Markdown Highlighting
+call <SID>X('mkdCode', s:blue, '', '')
+call <SID>X('mkdCodeDelimiter', s:yellow, '', '')
+call <SID>X('mkdHeading', s:white, '', '')
+call <SID>X('mkdListItemLine', s:purple, '', '')
+call <SID>X('mkdNonListItemBlock', s:foreground, '', '')
 
 " XML Highlighting
 call <SID>X('xmlTag', s:blue, '', '')
