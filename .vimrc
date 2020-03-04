@@ -32,6 +32,9 @@ set splitright
 " Disable recognition of keys sending an escape sequence when in insert mode
 set noesckeys
 
+" Show number of ocurrences when searching
+set shm-=S
+
 " Folding
 set foldmethod=indent   
 set foldnestmax=1
@@ -40,10 +43,10 @@ set nofoldenable
 " Status line
 set laststatus=2
 set statusline=
-set statusline+=%1*\ %l/%L                      " line of lines
-set statusline+=\ [%02c]                        " column number
-set statusline+=%2*\ %F                         " file path and name
-set statusline+=\ %m                            " modified flag
+set statusline+=%1*\ %l/%L   " line of lines
+set statusline+=\ [%02c]     " column number
+set statusline+=%2*\ %F      " file path and name
+set statusline+=\ %m         " modified flag
 
 " Backup 
 set backup
@@ -123,6 +126,7 @@ let g:ale_linters_explicit = 1
 let g:ale_linters = {
 \  'javascript': ['eslint', 'prettier'],
 \  'json': ['jsonlint', 'prettier'],
+\  'go': ['golint'],
 \  'css': ['csslint', 'prettier', 'stylelint'],
 \  'html': ['HTMLHint'],
 \  'ruby': ['rubocop'],
@@ -132,7 +136,8 @@ let g:ale_linters = {
 let g:ale_fixers = {
 \  'javascript': ['eslint', 'prettier'],
 \  'json': ['fixjson'],
-\  'ruby': ['rubocop']
+\  'ruby': ['rubocop'],
+\  'go': ['gofmt']
 \}
 let g:ale_sign_error = '>'
 let g:ale_sign_warning = '-'
