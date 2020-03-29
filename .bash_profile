@@ -1,7 +1,9 @@
 source ~/.bashrc
 
+export PATH="/usr/local/opt/openvpn/sbin:$PATH"
+
 # Aliases
-alias l="ls -la"
+alias l="ls -lAho"
 alias c="clear"
 alias path="echo $PATH | tr ':' '\n'"
 alias et="sudo rm -rf ~/.Trash/*"
