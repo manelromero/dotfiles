@@ -83,24 +83,17 @@ nnoremap <leader>' bi'<esc>ea'<esc>l
 nnoremap <leader>" bi"<esc>ea"<esc>l
 nnoremap <leader>a :Ag 
 
-" Disable cursor keys
-nnoremap <Up> <nop>
-nnoremap <Down> <nop>
-nnoremap <Left> <nop>
-nnoremap <Right> <nop>
-inoremap <Up> <nop>
-inoremap <Down> <nop>
-inoremap <Left> <nop>
-inoremap <Right> <nop>
-
 " Enable completion where available, must be set before ALE is loaded.
 let g:ale_completion_enabled = 1
 
+" Netrw
+" hide top banner
+let g:netrw_banner = 0
+" hiding list
+let g:netrw_list_hide= '.git/,node_modules'
+
 " Set CSV delimiter
 let g:polyglot_disabled = ['csv']
-
-" Hiding list for Netrw
-let g:netrw_list_hide= '.git/,node_modules'
 
 " Vundle
 filetype off
