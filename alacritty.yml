@@ -24,15 +24,15 @@ tabspaces: 2
 
 font:
   normal:
-    family: Iosevka
+    family: Monaco
     style: Regular
   bold:
-    family: Iosevka
+    family: Monaco
     style: Bold
   italic:
-    family: Iosevka
+    family: Monaco
     style: Italic
-  size: 19.0
+  size: 20.0
   offset:
     x: 0
     y: 0
@@ -49,7 +49,8 @@ colors:
     foreground: '0xeaeaea'
     #dim_foreground: '0x9a9a9a'
     #bright_foreground: '0xffffff'
-  #cursor:
+  cursor:
+    cursor:  '0xc7c7c7'
   #selection:
   normal:
     black:   '0x000000'
