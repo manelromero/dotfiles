@@ -8,7 +8,7 @@ set showcmd
 set visualbell
 colorscheme Manel
 
-" Set language
+" Language
 language en_GB.UTF-8
 
 " File encoding

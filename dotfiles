@@ -1,8 +1,8 @@
-#!/bin/bash
+#! /bin/bash
 
 DESTINATION_PATH=~/.dotfiles/
 
-cp ~/dotfiles.sh ${DESTINATION_PATH}dotfiles.sh
+cp ~/bin/dotfiles ${DESTINATION_PATH}dotfiles
 cp ~/.bash_profile ${DESTINATION_PATH}.bash_profile
 cp ~/.vimrc ${DESTINATION_PATH}.vimrc
 cp -r ~/.vim/colors ${DESTINATION_PATH}.vim/
