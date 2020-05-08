@@ -1,6 +1,6 @@
 source ~/.bashrc
 
-export PATH="/usr/local/opt/openvpn/sbin:$PATH"
+export PATH=$HOME/bin:$PATH
 
 # Aliases
 alias l="ls -lAho"
