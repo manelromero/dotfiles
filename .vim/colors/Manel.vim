@@ -3,24 +3,25 @@
 
 " Colors
 let s:foreground = 'cccccc'
-let s:background = '262626'
+let s:background = '1c1c1c'
 let s:selection = '666666'
-let s:line = '3c3c3c'
+let s:line = '303030'
 let s:white = 'ffffff'
-let s:black = '000000'
 let s:comment = '999999'
-let s:red = 'cc6666'
-let s:orange = 'de935f'
-let s:yellow = 'f0c674'
-let s:green = 'b5bd68'
-let s:blue = '81a2be'
-let s:purple = 'b294bb'
-let s:grey = '7a7a7a'
+let s:red = 'd75f5f'
+let s:orange = 'd7875f'
+let s:yellow = 'ffd787'
+let s:green = 'afaf5f'
+let s:blue = '87afaf'
+let s:purple = 'af87af'
+let s:grey = '767676'
 
 hi clear
 syntax reset
 
 let g:colors_name = 'Manel'
+
+set background=dark
 
 " Returns an approximate grey index for the given grey level
 fun <SID>grey_number(x)
@@ -158,8 +159,8 @@ call <SID>X('MoreMsg', s:yellow, '', '')
 call <SID>X('NonText', s:selection, '', '')
 call <SID>X('Normal', s:foreground, s:background, '')
 call <SID>X('PMenu', s:foreground, s:background, '')
-call <SID>X('PMenuSel', s:foreground, s:background, 'reverse')
 call <SID>X('PMenuSbar', '', s:selection, '')
+call <SID>X('PMenuSel', s:foreground, s:background, 'reverse')
 call <SID>X('Question', s:green, '', '')
 call <SID>X('Search', s:background, s:blue, '')
 call <SID>X('SignColumn', '', s:background, 'none')
@@ -172,15 +173,17 @@ call <SID>X('User1', s:blue, s:selection, '')
 call <SID>X('User2', s:yellow, s:selection, '')
 call <SID>X('VertSplit', s:background, s:selection, '')
 call <SID>X('Visual', '', s:selection, '')
-call <SID>X('Warning', s:black, s:orange, '')
+call <SID>X('Warning', s:background, s:blue, '')
 call <SID>X('WarningMsg', s:red, '', '')
 call <SID>X('netrwClassify', s:blue, '', '')
 call <SID>X('netrwDir', s:blue, '', '')
 call <SID>X('netrwExe', s:red, '', '')
 call <SID>X('netrwPlain', s:foreground, '', '')
-call <SID>X('vimCommand', s:red, '', '')
+call <SID>X('vimCommand', s:orange, '', '')
 call <SID>X('vimContinue', s:grey, '', '')
 call <SID>X('vimFuncKey', s:purple, '', '')
+call <SID>X('vimNotFunc', s:red, '', '')
+call <SID>X('vimOption', s:blue, '', '')
 
 " Bash Highlighting
 call <SID>X('shDerefSimple', s:red, '', '')
@@ -304,5 +307,3 @@ delf <SID>rgb_number
 delf <SID>grey_colour
 delf <SID>grey_level
 delf <SID>grey_number
-
-set background=dark
