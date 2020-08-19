@@ -82,6 +82,9 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <leader>' bi'<esc>ea'<esc>l
 nnoremap <leader>" bi"<esc>ea"<esc>l
 nnoremap <leader>a :Ag 
+nnoremap <leader>c :!ctags -R --exclude=client/node_modules .<cr>
+nnoremap <leader>x <c-]>
+nnoremap <leader>z <c-o>
 
 " Enable completion where available, must be set before ALE is loaded.
 let g:ale_completion_enabled = 1
@@ -90,7 +93,7 @@ let g:ale_completion_enabled = 1
 " hide top banner
 let g:netrw_banner = 0
 " hiding list
-let g:netrw_list_hide= '.git/,node_modules'
+let g:netrw_list_hide= '.git/,node_modules,tags'
 
 " Set CSV delimiter
 let g:polyglot_disabled = ['csv']
