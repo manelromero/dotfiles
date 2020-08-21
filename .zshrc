@@ -1,52 +1,69 @@
-export ZSH=/Users/manel/.oh-my-zsh
-export TERM="xterm-256color"
-ZSH_THEME="powerlevel9k/powerlevel9k"
-source $ZSH/oh-my-zsh.sh
+source ~/.bashrc
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Set path
+export PATH=$HOME/bin:$PATH
+
+# Set locale
+export LC_ALL=en_GB.UTF-8
+
+# Set ls colors
+export CLICOLOR=1
+export LSCOLORS=gxfxcxdxbxegedabagacad
 
 # Aliases
-alias l="ls -la"
-alias c="clear"
+alias l="ls -lAho"
 alias path="echo $PATH | tr ':' '\n'"
 alias et="sudo rm -rf ~/.Trash/*"
-alias glo="git log --oneline"
-alias images="docker image ls -f 'dangling=true'"
+alias glo="git log --pretty=format:'%C(yellow)%h%Creset %s %Cgreen%an%Creset [%cr]%Creset'"
+alias images="docker image ls -f dangling=true"
 alias fw="tmux a -t flywire"
+alias manel="tmux a -t manel"
+alias containers="docker container ls -a --format 'table{{.Image}}\t{{.Names}}\t{{.Ports}}\t{{.Status}}'"
+alias prune="docker system prune --all --volumes"
 
 # Application aliases
+alias api="cd ~/code/platform/apps/api"
 alias core="cd ~/code/platform/apps/core"
-alias payex="cd ~/code/platform/apps/payex_web"
-alias recon="cd ~/code/platform/apps/recon"
-alias reconciliation="cd ~/code/platform/apps/reconciliation"
-alias operations="cd ~/code/platform/apps/operations"
-alias mcreconciliation="cd ~/code/victoria/missioncontrol-reconciliation"
+alias filer="cd ~/code/victoria/filer"
+alias harvester="cd ~/code/victoria/matching-dataset-harvester"
+alias matching="cd ~/code/victoria/matching"
+alias mccommon="cd ~/code/victoria/missioncontrol-common"
+alias mccomponents="cd ~/code/victoria/missioncontrol-components"
 alias mcmatching="cd ~/code/victoria/missioncontrol-matching"
+alias mcpartners="cd ~/code/victoria/missioncontrol-partners"
+alias mcreconciliation="cd ~/code/victoria/missioncontrol-reconciliation"
+alias operations="cd ~/code/victoria/operations"
+alias partners="cd ~/code/platform/apps/partners"
+alias payex="cd ~/code/victoria/payex-web"
+alias reconciliation="cd ~/code/victoria/reconciliation"
+alias victoria="cd ~/code/victoria"
+
+plugins=(zsh-autosuggestions)
+
+function git_branch() {
+  branch=$(git symbolic-ref HEAD 2> /dev/null | awk 'BEGIN{FS="/"} {print $NF}')
+
+  if [[ $branch == ""  ]]; then
+    :
+  else
+    echo ' '$branch
+  fi
+}
+
+# Set prompt
+setopt prompt_subst
+PROMPT='%F{214}%~%F{35}$(git_branch) %F{255}> %F{252}'
+
+# Set reverse search through fzf
+function _reverse_search() {
+  selected_command=$(fc -rl 1 | awk '{$1="";print substr($0,2)}' | fzf)
+
+  echo -n $selected_command
+}
+
+zle -N _reverse_search
+bindkey '^r' _reverse_search
 
 # Map Ctrl + R
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# Activate colors
-export LSCOLORS=dxfxCxDxbxegedabagaced
-
-# Powerlevel prompt
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
-POWERLEVEL9K_VCS_HIDE_TAGS=true
-POWERLEVEL9K_CONTEXT_TEMPLATE="%n"
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
-POWERLEVEL9K_DISABLE_RPROMPT=true
-POWERLEVEL9K_PROMPT_ON_NEWLINE=false
-
-# Powerlevel colors
-POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND="232"
-POWERLEVEL9K_CONTEXT_DEFAULT_BACKGROUND="250"
-POWERLEVEL9K_DIR_HOME_FOREGROUND="254"
-POWERLEVEL9K_DIR_HOME_BACKGROUND="024"
-POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND="254"
-POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND="024"
-POWERLEVEL9K_DIR_DEFAULT_FOREGROUND="254"
-POWERLEVEL9K_DIR_DEFAULT_BACKGROUND="024"
-POWERLEVEL9K_VCS_CLEAN_FOREGROUND="232"
-POWERLEVEL9K_VCS_CLEAN_BACKGROUND="036"
-POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND="232"
-POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND="220"
-POWERLEVEL9K_VCS_MODIFIED_FOREGROUND="232"
-POWERLEVEL9K_VCS_MODIFIED_BACKGROUND="222"
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

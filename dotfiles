@@ -4,6 +4,7 @@ DESTINATION_PATH=~/.dotfiles/
 
 cp ~/bin/dotfiles ${DESTINATION_PATH}dotfiles
 cp ~/.bash_profile ${DESTINATION_PATH}.bash_profile
+cp ~/.zshrc ${DESTINATION_PATH}.zshrc
 cp ~/.vimrc ${DESTINATION_PATH}.vimrc
 cp -r ~/.vim/colors ${DESTINATION_PATH}.vim/
 cp ~/.tmux.conf ${DESTINATION_PATH}.tmux.conf
