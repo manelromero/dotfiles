@@ -15,7 +15,7 @@ alias containers="docker container ls -a --format 'table{{.Image}}\t{{.Names}}\t
 alias prune="docker system prune --all --volumes"
 
 # Application aliases
-alias api="cd ~/code/platform/apps/api"
+alias api="cd ~/code/victoria/flywire-api"
 alias core="cd ~/code/platform/apps/core"
 alias filer="cd ~/code/victoria/filer"
 alias harvester="cd ~/code/victoria/matching-dataset-harvester"

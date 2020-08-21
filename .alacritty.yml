@@ -12,6 +12,7 @@ window:
   dynamic_padding: false
   decorations: full
   startup_mode: Fullscreen
+  dynamic_title: true
   #title: Alacritty
   #class: Alacritty
 
@@ -69,7 +70,7 @@ colors:
     white:   '0xffffff'
   #dim:
   indexed_colors: []
-visual_bell:
+bell:
   animation: EaseOutExpo
   duration: 0
   color: '0xffffff'
@@ -89,7 +90,6 @@ selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
   save_to_clipboard: true
 
-dynamic_title: true
 
 cursor:
   style: Block

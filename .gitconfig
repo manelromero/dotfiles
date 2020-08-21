@@ -2,11 +2,11 @@
 	name = Manel Romero
 	email = manel@manelromero.com
 [pull]
-	rebase = true
+  rebase = true
 [rerere]
-	enabled = true
+  enabled = true
 [core]
-	excludesfile = /Users/manel/.gitignore_global
+  excludesfile = /Users/manel.romero/.gitignore_global
   ignorecase = false
 [alias]
-	pushf = push --force-with-lease
+  pushf = push --force-with-lease

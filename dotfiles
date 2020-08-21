@@ -8,7 +8,7 @@ cp ~/.zshrc ${DESTINATION_PATH}.zshrc
 cp ~/.vimrc ${DESTINATION_PATH}.vimrc
 cp -r ~/.vim/colors ${DESTINATION_PATH}.vim/
 cp ~/.tmux.conf ${DESTINATION_PATH}.tmux.conf
-cp ~/.config/alacritty/alacritty.yml ${DESTINATION_PATH}alacritty.yml
+cp ~/.alacritty.yml ${DESTINATION_PATH}.alacritty.yml
 cp ~/.gemrc ${DESTINATION_PATH}.gemrc
 cp ~/.gitconfig ${DESTINATION_PATH}.gitconfig
 cp ~/.gitignore_global ${DESTINATION_PATH}.gitignore_global
