@@ -11,6 +11,7 @@ cp ~/.tmux.conf ${DESTINATION_PATH}.tmux.conf
 cp ~/.alacritty.yml ${DESTINATION_PATH}.alacritty.yml
 cp ~/.eslintrc.json ${DESTINATION_PATH}.eslintrc.json
 cp ~/.prettierrc.json ${DESTINATION_PATH}.prettierrc.json
+cp ~/.rubocop.yml ${DESTINATION_PATH}.rubocop.yml
 cp ~/.gemrc ${DESTINATION_PATH}.gemrc
 cp ~/.gitconfig ${DESTINATION_PATH}.gitconfig
 cp ~/.gitignore_global ${DESTINATION_PATH}.gitignore_global
