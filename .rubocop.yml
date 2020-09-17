@@ -55,6 +55,6 @@ Layout/CaseIndentation:
 Layout/EndAlignment:
   Enabled: false
 Layout/DotPosition:
-  EnforcedStyle: trailing
+  EnforcedStyle: leading
 Naming/RescuedExceptionsVariableName:
   Enabled: false
