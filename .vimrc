@@ -114,6 +114,7 @@ Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plugin 'junegunn/fzf.vim'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'sheerun/vim-polyglot'
+Plugin 'tpope/vim-abolish'
 call vundle#end()
 filetype plugin indent on
 
