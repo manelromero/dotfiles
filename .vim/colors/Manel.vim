@@ -145,6 +145,7 @@ fun <SID>X(group, fg, bg, attr)
 endfun
 
 " Vim Highlighting
+call <SID>X('CursorColumn', '', s:line, 'none')
 call <SID>X('CursorLine', '', s:line, 'none')
 call <SID>X('CursorLineNr', s:yellow, '', 'none')
 call <SID>X('Directory', s:blue, '', '')

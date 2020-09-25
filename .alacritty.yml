@@ -13,11 +13,11 @@ window:
   decorations: full
   startup_mode: Fullscreen
   dynamic_title: true
-  #title: Alacritty
+  title: Alacritty
   #class: Alacritty
 
 scrolling:
-  history: 20000
+  history: 30000
   multiplier: 3
 
 font:
