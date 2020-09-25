@@ -6,6 +6,7 @@ set backspace=indent,eol,start
 set wildmenu
 set showcmd
 set visualbell
+set redrawtime=10000
 colorscheme Manel
 
 " Language
@@ -128,13 +129,15 @@ let g:ale_linters = {
 \  'html': ['HTMLHint'],
 \  'ruby': ['rubocop'],
 \  'make': ['checkmake'],
-\  'haml': ['haml-lint']
+\  'haml': ['haml-lint'],
+\  'xml': ['xmllint']
 \}
 let g:ale_fixers = {
 \  'javascript': ['eslint', 'prettier'],
 \  'json': ['fixjson'],
 \  'ruby': ['rubocop'],
-\  'go': ['gofmt']
+\  'go': ['gofmt'],
+\  'xml': ['xmllint']
 \}
 let g:ale_sign_error = '>'
 let g:ale_sign_warning = '-'
