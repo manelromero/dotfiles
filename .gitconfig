@@ -8,5 +8,6 @@
 [core]
   excludesfile = /Users/manel.romero/.gitignore_global
   ignorecase = false
+	attributesfile = /Users/manel.romero/.gitattributes
 [alias]
   pushf = push --force-with-lease

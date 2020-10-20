@@ -14,5 +14,6 @@ cp ~/.rubocop.yml ${DESTINATION_PATH}.rubocop.yml
 cp ~/.gemrc ${DESTINATION_PATH}.gemrc
 cp ~/.gitconfig ${DESTINATION_PATH}.gitconfig
 cp ~/.gitignore_global ${DESTINATION_PATH}.gitignore_global
+cp ~/.gitattributes ${DESTINATION_PATH}.gitattributes
 cp ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/*.sublime-settings ${DESTINATION_PATH}Sublime/User/
 cp ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/*.sublime-keymap ${DESTINATION_PATH}Sublime/User/
