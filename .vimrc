@@ -126,7 +126,7 @@ let g:ale_linters = {
 \  'json': ['jsonlint', 'prettier'],
 \  'go': ['golint'],
 \  'css': ['csslint', 'prettier', 'stylelint'],
-\  'html': ['HTMLHint'],
+\  'html': ['htmlhint'],
 \  'ruby': ['rubocop'],
 \  'make': ['checkmake'],
 \  'haml': ['haml-lint'],
@@ -136,6 +136,7 @@ let g:ale_fixers = {
 \  'javascript': ['eslint', 'prettier'],
 \  'json': ['fixjson'],
 \  'ruby': ['rubocop'],
+\  'html': ['html-beautify'],
 \  'go': ['gofmt'],
 \  'xml': ['xmllint']
 \}
