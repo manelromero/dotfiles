@@ -98,8 +98,7 @@ cursor:
 
 live_config_reload: true
 
-shell:
-  program: /bin/zsh
+#shell:
 
 working_directory: None
 
