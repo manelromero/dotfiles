@@ -1,8 +1,10 @@
 source ~/.bashrc
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# Set path
-export PATH=$HOME/bin:$PATH
+# Use Homebrew Ruby
+export PATH=/usr/local/Cellar/ruby/3.0.0_1/bin:$PATH
+
+export PATH=$PATH:$HOME/bin
 
 # Set locale
 export LC_ALL=en_GB.UTF-8
@@ -38,6 +40,7 @@ alias operations="cd ~/code/victoria/operations"
 alias payex="cd ~/code/victoria/payex-web"
 alias reconciliation="cd ~/code/victoria/reconciliation"
 alias victoria="cd ~/code/victoria"
+alias ledgerdb="cd ~/code/victoria/ledger-dashboard"
 
 plugins=(zsh-autosuggestions)
 
@@ -67,3 +70,8 @@ bindkey '^r' _reverse_search
 
 # Map Ctrl + R
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# To open Jira tickets
+function jira() {
+  open -a "Brave Browser" https://jira.flywire.tech/browse/$1
+}

@@ -1,3 +1,5 @@
+AllCops:
+  NewCops: enable
 Style/Documentation:
   Enabled: false
 Style/FrozenStringLiteralComment:
@@ -24,13 +26,15 @@ Style/SafeNavigation:
   Enabled: false
 Style/NumericLiterals:
   Enabled: false
+Style/RedundantFileExtensionInRequire:
+  Enabled: true
+Style/HashTransformKeys:
+  Enabled: true
 Metrics/ModuleLength:
   Enabled: false
 Metrics/ClassLength:
   Enabled: false
 Metrics/MethodLength:
-  Enabled: false
-Metrics/LineLength:
   Enabled: false
 Metrics/BlockLength:
   Enabled: false
@@ -56,5 +60,21 @@ Layout/EndAlignment:
   Enabled: false
 Layout/DotPosition:
   EnforcedStyle: leading
+Layout/LineLength:
+  Enabled: false
+Layout/EmptyLinesAroundAttributeAccessor:
+  Enabled: true
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: true
 Naming/RescuedExceptionsVariableName:
   Enabled: false
+Lint/BinaryOperatorWithIdenticalOperands:
+  Enabled: true
+Lint/DeprecatedOpenSSLConstant:
+  Enabled: true
+Lint/DuplicateElsifCondition:
+  Enabled: true
+Lint/DuplicateRescueException:
+  Enabled: true
+Lint/EmptyConditionalBody:
+  Enabled: true

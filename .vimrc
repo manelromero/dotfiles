@@ -86,6 +86,10 @@ nnoremap <leader>a :Ag
 nnoremap <leader>c :!ctags -R --exclude=client/node_modules .<cr>
 nnoremap <leader>x <c-]>
 nnoremap <leader>z <c-o>
+nnoremap <Right> <c-w>>
+nnoremap <Left> <c-w><
+nnoremap <Up> <c-w>+
+nnoremap <Down> <c-w>-
 
 " Enable completion where available, must be set before ALE is loaded.
 let g:ale_completion_enabled = 1
@@ -129,7 +133,8 @@ let g:ale_linters = {
 \  'ruby': ['rubocop'],
 \  'make': ['checkmake'],
 \  'haml': ['haml-lint'],
-\  'xml': ['xmllint']
+\  'xml': ['xmllint'],
+\  'haskell': ['brittany']
 \}
 let g:ale_fixers = {
 \  'javascript': ['eslint', 'prettier'],
@@ -137,7 +142,8 @@ let g:ale_fixers = {
 \  'ruby': ['rubocop'],
 \  'html': ['html-beautify'],
 \  'go': ['gofmt'],
-\  'xml': ['xmllint']
+\  'xml': ['xmllint'],
+\  'haskell': ['brittany']
 \}
 let g:ale_sign_error = '>'
 let g:ale_sign_warning = '-'

@@ -3,7 +3,7 @@
 
 " Colors
 let s:foreground = 'cccccc'
-let s:background = '1c1c1c'
+let s:background = '121212'
 let s:selection = '666666'
 let s:line = '303030'
 let s:white = 'ffffff'

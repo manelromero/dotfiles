@@ -1,6 +1,10 @@
 source ~/.bashrc
 
-export PATH=$HOME/bin:$PATH
+
+# Use Homebrew Ruby
+export PATH=/usr/local/Cellar/ruby/3.0.0_1/bin:$PATH
+
+export PATH=$PATH:$HOME/bin
 
 # Aliases
 alias l="ls -lAho"
@@ -29,6 +33,7 @@ alias operations="cd ~/code/victoria/operations"
 alias payex="cd ~/code/victoria/payex-web"
 alias reconciliation="cd ~/code/victoria/reconciliation"
 alias victoria="cd ~/code/victoria"
+alias ledgerdb="cd ~/code/victoria/ledger-dashboard"
 
 # Activate colors
 export TERM="xterm-256color"
@@ -62,3 +67,8 @@ $reset> "
 
 # rbenv initialization
 eval "$(rbenv init -)"
+
+# To open Jira tickets
+function jira() {
+  open -a "Brave Browser" https://jira.flywire.tech/browse/$1
+}

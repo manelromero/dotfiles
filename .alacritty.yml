@@ -24,18 +24,21 @@ scrolling:
 
 font:
   normal:
-    family: Monaco
+    family: 'Ubuntu Mono'
     style: Regular
   bold:
-    family: Monaco
+    family: 'Ubuntu Mono'
     style: Bold
   italic:
-    family: Monaco
+    family: 'Ubuntu Mono'
     style: Italic
-  size: 20.0
+  bold_italic:
+    family: 'Ubuntu Mono'
+    style: Bold Italic
+  size: 28
   offset:
     x: 0
-    y: 0
+    y: 2
   glyph_offset:
     x: 0
     y: 0
@@ -45,13 +48,15 @@ draw_bold_text_with_bright_colors: true
 
 colors:
   primary:
-    background: '0x000000'
-    foreground: '0xeaeaea'
+    background: '0x000012'
+    foreground: '0xeeeeee'
     #dim_foreground: '0x9a9a9a'
     #bright_foreground: '0xffffff'
   cursor:
     cursor:  '0xc7c7c7'
   #selection:
+    #text: '0xffffff'
+    #background: '0xffffff'
   normal:
     black:   '0x000000'
     red:     '0xc91b00'
