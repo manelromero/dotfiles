@@ -9,6 +9,10 @@ set visualbell
 set redrawtime=10000
 colorscheme Manel
 
+" Show hidden characters
+set list
+set listchars=eol:¬
+
 " Language
 language en_GB.UTF-8
 
@@ -46,7 +50,7 @@ set laststatus=2
 set statusline=
 set statusline+=%1*\ %l/%L   " line of lines
 set statusline+=\ [%02c]     " column number
-set statusline+=%2*\ %F      " file path and name
+set statusline+=%2*\ %f      " file path and name
 set statusline+=\ %m         " modified flag
 
 " Backup 

@@ -1,9 +1,6 @@
 source ~/.bashrc
 
-
-# Use Homebrew Ruby
-export PATH=/usr/local/Cellar/ruby/3.0.0_1/bin:$PATH
-
+# Add user path
 export PATH=$PATH:$HOME/bin
 
 # Aliases
@@ -18,22 +15,21 @@ alias manel="tmux new -s manel || tmux a -t manel"
 alias containers="docker container ls -a --format 'table{{.Image}}\t{{.Names}}\t{{.Ports}}\t{{.Status}}'"
 
 # Application aliases
-alias api="cd ~/code/victoria/flywire-api"
-alias bankingledger="cd ~/code/victoria/bankingledger"
-alias core="cd ~/code/victoria/flywire-core"
-alias filer="cd ~/code/victoria/filer"
-alias harvester="cd ~/code/victoria/matching-dataset-harvester"
-alias matching="cd ~/code/victoria/matching"
-alias mccommon="cd ~/code/victoria/missioncontrol-common"
-alias mccomponents="cd ~/code/victoria/missioncontrol-components"
-alias mcmatching="cd ~/code/victoria/missioncontrol-matching"
-alias mcpartners="cd ~/code/victoria/missioncontrol-partners"
-alias mcreconciliation="cd ~/code/victoria/missioncontrol-reconciliation"
-alias operations="cd ~/code/victoria/operations"
-alias payex="cd ~/code/victoria/payex-web"
-alias reconciliation="cd ~/code/victoria/reconciliation"
-alias victoria="cd ~/code/victoria"
-alias ledgerdb="cd ~/code/victoria/ledger-dashboard"
+alias api="cd ~/code/flywire-api"
+alias bankingledger="cd ~/code/bankingledger"
+alias core="cd ~/code/flywire-core"
+alias filer="cd ~/code/filer"
+alias harvester="cd ~/code/matching-dataset-harvester"
+alias matching="cd ~/code/matching"
+alias mccommon="cd ~/code/missioncontrol-common"
+alias mccomponents="cd ~/code/missioncontrol-components"
+alias mcmatching="cd ~/code/missioncontrol-matching"
+alias mcpartners="cd ~/code/missioncontrol-partners"
+alias mcreconciliation="cd ~/code/missioncontrol-reconciliation"
+alias operations="cd ~/code/operations"
+alias payex="cd ~/code/flywire-payex"
+alias reconciliation="cd ~/code/reconciliation"
+alias ledgerdb="cd ~/code/ledger-dashboard"
 
 # Activate colors
 export TERM="xterm-256color"
@@ -64,9 +60,6 @@ export PS1="\
 $orange\w\
 $yellow\$(__git_ps1 ' %s') \
 $reset> "
-
-# rbenv initialization
-eval "$(rbenv init -)"
 
 # To open Jira tickets
 function jira() {
