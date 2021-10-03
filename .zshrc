@@ -69,3 +69,7 @@ bindkey '^r' _reverse_search
 function jira() {
   open -a "Brave Browser" https://jira.flywire.tech/browse/$1
 }
+
+#test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

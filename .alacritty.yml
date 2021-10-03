@@ -33,7 +33,7 @@ font:
     family: 'Monaco'
     style: Italic
   bold_italic:
-    family: 'Ubuntu Mono'
+    family: 'Monaco'
     style: Bold Italic
   size: 22.5
   offset:
@@ -89,9 +89,6 @@ mouse:
   double_click: { threshold: 300 }
   triple_click: { threshold: 300 }
   hide_when_typing: true
-  url:
-    #launcher:
-    modifiers: None
 
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
