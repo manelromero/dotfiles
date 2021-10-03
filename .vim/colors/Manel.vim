@@ -89,59 +89,59 @@ endfun
 
 " Returns the palette index to approximate the given R/G/B colour levels
 fun <SID>colour(r, g, b)
-	" Get the closest grey
-	let l:gx = <SID>grey_number(a:r)
-	let l:gy = <SID>grey_number(a:g)
-	let l:gz = <SID>grey_number(a:b)
+  " Get the closest grey
+  let l:gx = <SID>grey_number(a:r)
+  let l:gy = <SID>grey_number(a:g)
+  let l:gz = <SID>grey_number(a:b)
 
-	" Get the closest colour
-	let l:x = <SID>rgb_number(a:r)
-	let l:y = <SID>rgb_number(a:g)
-	let l:z = <SID>rgb_number(a:b)
+  " Get the closest colour
+  let l:x = <SID>rgb_number(a:r)
+  let l:y = <SID>rgb_number(a:g)
+  let l:z = <SID>rgb_number(a:b)
 
-	if l:gx == l:gy && l:gy == l:gz
-		" There are two possibilities
-		let l:dgr = <SID>grey_level(l:gx) - a:r
-		let l:dgg = <SID>grey_level(l:gy) - a:g
-		let l:dgb = <SID>grey_level(l:gz) - a:b
-		let l:dgrey = (l:dgr * l:dgr) + (l:dgg * l:dgg) + (l:dgb * l:dgb)
-		let l:dr = <SID>rgb_level(l:gx) - a:r
-		let l:dg = <SID>rgb_level(l:gy) - a:g
-		let l:db = <SID>rgb_level(l:gz) - a:b
-		let l:drgb = (l:dr * l:dr) + (l:dg * l:dg) + (l:db * l:db)
-		if l:dgrey < l:drgb
-			" Use the grey
-			return <SID>grey_colour(l:gx)
-		else
-			" Use the colour
-			return <SID>rgb_colour(l:x, l:y, l:z)
-		endif
-	else
-		" Only one possibility
-		return <SID>rgb_colour(l:x, l:y, l:z)
-	endif
+  if l:gx == l:gy && l:gy == l:gz
+    " There are two possibilities
+    let l:dgr = <SID>grey_level(l:gx) - a:r
+    let l:dgg = <SID>grey_level(l:gy) - a:g
+    let l:dgb = <SID>grey_level(l:gz) - a:b
+    let l:dgrey = (l:dgr * l:dgr) + (l:dgg * l:dgg) + (l:dgb * l:dgb)
+    let l:dr = <SID>rgb_level(l:gx) - a:r
+    let l:dg = <SID>rgb_level(l:gy) - a:g
+    let l:db = <SID>rgb_level(l:gz) - a:b
+    let l:drgb = (l:dr * l:dr) + (l:dg * l:dg) + (l:db * l:db)
+    if l:dgrey < l:drgb
+      " Use the grey
+      return <SID>grey_colour(l:gx)
+    else
+      " Use the colour
+      return <SID>rgb_colour(l:x, l:y, l:z)
+    endif
+  else
+    " Only one possibility
+    return <SID>rgb_colour(l:x, l:y, l:z)
+  endif
 endfun
 
 " Returns the palette index to approximate the 'rrggbb' hex string
 fun <SID>rgb(rgb)
-	let l:r = ("0x" . strpart(a:rgb, 0, 2)) + 0
-	let l:g = ("0x" . strpart(a:rgb, 2, 2)) + 0
-	let l:b = ("0x" . strpart(a:rgb, 4, 2)) + 0
+  let l:r = ("0x" . strpart(a:rgb, 0, 2)) + 0
+  let l:g = ("0x" . strpart(a:rgb, 2, 2)) + 0
+  let l:b = ("0x" . strpart(a:rgb, 4, 2)) + 0
 
-	return <SID>colour(l:r, l:g, l:b)
+  return <SID>colour(l:r, l:g, l:b)
 endfun
 
 " Sets the highlighting for the given group
 fun <SID>X(group, fg, bg, attr)
-	if a:fg != ''
-		exec 'hi ' . a:group . ' guifg=#' . a:fg . ' ctermfg=' . <SID>rgb(a:fg)
-	endif
-	if a:bg != ''
-		exec 'hi ' . a:group . ' guibg=#' . a:bg . ' ctermbg=' . <SID>rgb(a:bg)
-	endif
-	if a:attr != ''
-		exec 'hi ' . a:group . ' gui=' . a:attr . ' cterm=' . a:attr
-	endif
+  if a:fg != ''
+    exec 'hi ' . a:group . ' guifg=#' . a:fg . ' ctermfg=' . <SID>rgb(a:fg)
+  endif
+  if a:bg != ''
+    exec 'hi ' . a:group . ' guibg=#' . a:bg . ' ctermbg=' . <SID>rgb(a:bg)
+  endif
+  if a:attr != ''
+    exec 'hi ' . a:group . ' gui=' . a:attr . ' cterm=' . a:attr
+  endif
 endfun
 
 " Vim Highlighting
@@ -159,7 +159,7 @@ call <SID>X('ModeMsg', s:yellow, '', '')
 call <SID>X('MoreMsg', s:yellow, '', '')
 call <SID>X('NonText', s:selection, '', '')
 call <SID>X('Normal', s:foreground, s:background, '')
-call <SID>X('PMenu', s:foreground, s:background, '')
+call <SID>X('PMenu', s:foreground, s:grey, '')
 call <SID>X('PMenuSbar', '', s:selection, '')
 call <SID>X('PMenuSel', s:foreground, s:background, 'reverse')
 call <SID>X('Question', s:green, '', '')
@@ -175,7 +175,7 @@ call <SID>X('User2', s:yellow, s:selection, '')
 call <SID>X('VertSplit', s:background, s:selection, '')
 call <SID>X('Visual', '', s:selection, '')
 call <SID>X('Warning', s:background, s:blue, '')
-call <SID>X('WarningMsg', s:red, '', '')
+call <SID>X('WarningMsg', s:orange, '', '')
 call <SID>X('netrwClassify', s:blue, '', '')
 call <SID>X('netrwDir', s:blue, '', '')
 call <SID>X('netrwExe', s:red, '', '')
@@ -185,6 +185,21 @@ call <SID>X('vimContinue', s:grey, '', '')
 call <SID>X('vimFuncKey', s:purple, '', '')
 call <SID>X('vimNotFunc', s:red, '', '')
 call <SID>X('vimOption', s:blue, '', '')
+
+" COC Highlighting
+call <SID>X('CocErrorHighlight', s:red, s:white, 'underline')
+call <SID>X('CocErrorSign', s:red, '', '')
+call <SID>X('CocErrorVirtualText', s:blue, '', '')
+call <SID>X('CocFloating', s:white, s:blue, '')
+call <SID>X('CocHingHighlight', s:white, s:blue, '')
+call <SID>X('CocHintSign', s:orange, '', '')
+call <SID>X('CocHintVirtualText', s:blue, '', '')
+call <SID>X('CocInfoHighlight', s:white, s:red, '')
+call <SID>X('CocInfoSign', s:blue, '', '')
+call <SID>X('CocInfoVirtualText', s:blue, '', '')
+call <SID>X('CocWarningHighlight', s:white, s:blue, '')
+call <SID>X('CocWarningSign', s:yellow, '', '')
+call <SID>X('CocWarningVirtualText', s:blue, '', '')
 
 " Bash Highlighting
 call <SID>X('shDerefSimple', s:red, '', '')
@@ -261,6 +276,8 @@ call <SID>X('jsModuleKeyword', s:foreground, '', '')
 call <SID>X('jsNull', s:red, '', '')
 call <SID>X('jsObjectKey', s:orange, '', '')
 call <SID>X('jsObjectProp', s:foreground, '', '')
+call <SID>X('jsObjectShorthandProp', s:orange, '', '')
+call <SID>X('jsObjectStringKey', s:green, '', '')
 call <SID>X('jsObjectValue', s:yellow, '', '')
 call <SID>X('jsParen', s:foreground, '', '')
 call <SID>X('jsRegexpString', s:green, '', '')
@@ -269,6 +286,15 @@ call <SID>X('jsStorageClass', s:blue, '', '')
 call <SID>X('jsString', s:green, '', '')
 call <SID>X('jsUndefined', s:red, '', '')
 call <SID>X('jsVariableDef', s:foreground, '', '')
+
+" TypeScript Highlighting
+call <SID>X('typescriptBoolean', s:orange, '', '')
+call <SID>X('typescriptLabel', s:blue, '', '')
+call <SID>X('typescriptReserved', s:blue, '', '')
+call <SID>X('typescriptStatement', s:red, '', '')
+call <SID>X('typescriptStorageClass', s:blue, '', '')
+call <SID>X('typescriptStringS', s:green, '', '')
+call <SID>X('typescriptType', s:yellow, '', '')
 
 " JSX Highlighting
 call <SID>X('jsxAttrib', s:orange, '', '')
