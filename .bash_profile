@@ -1,4 +1,5 @@
 source ~/.bashrc
+ctags=/usr/local/bin/ctags
 
 # Add user path
 export PATH=$PATH:$HOME/bin
@@ -19,6 +20,7 @@ alias api="cd ~/code/flywire-api"
 alias bankingledger="cd ~/code/bankingledger"
 alias core="cd ~/code/flywire-core"
 alias filer="cd ~/code/filer"
+alias gateway="cd ~/code/gateway"
 alias harvester="cd ~/code/matching-dataset-harvester"
 alias matching="cd ~/code/matching"
 alias mccommon="cd ~/code/missioncontrol-common"
@@ -28,6 +30,7 @@ alias mcpartners="cd ~/code/missioncontrol-partners"
 alias mcreconciliation="cd ~/code/missioncontrol-reconciliation"
 alias operations="cd ~/code/operations"
 alias payex="cd ~/code/flywire-payex"
+alias payex-back="cd ~/code/payex-backend"
 alias reconciliation="cd ~/code/reconciliation"
 alias ledgerdb="cd ~/code/ledger-dashboard"
 

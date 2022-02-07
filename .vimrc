@@ -9,6 +9,9 @@ set visualbell
 set redrawtime=10000
 colorscheme Manel
 
+" Testing...
+set updatetime=300
+
 " Show hidden characters
 set list
 set listchars=eol:¬
@@ -133,30 +136,30 @@ filetype plugin indent on
 " ALE
 let g:ale_linters_explicit = 1
 let g:ale_linters = {
-\  'javascript': ['eslint', 'prettier'],
-\  'typescript': ['eslint', 'prettier'],
-\  'typescriptreact': ['eslint', 'prettier'],
-\  'json': ['jsonlint', 'prettier'],
-\  'go': ['golint'],
-\  'css': ['csslint', 'prettier', 'stylelint'],
-\  'html': ['htmlhint'],
-\  'ruby': ['rubocop'],
-\  'make': ['checkmake'],
-\  'haml': ['haml-lint'],
-\  'xml': ['xmllint'],
-\  'haskell': ['brittany']
-\}
+  \ 'javascript': ['eslint', 'prettier'],
+  \ 'typescript': ['eslint', 'prettier'],
+  \ 'typescriptreact': ['eslint', 'prettier'],
+  \ 'json': ['jsonlint', 'prettier'],
+  \ 'go': ['golint'],
+  \ 'css': ['csslint', 'prettier', 'stylelint'],
+  \ 'html': ['htmlhint'],
+  \ 'ruby': ['rubocop'],
+  \ 'make': ['checkmake'],
+  \ 'haml': ['haml-lint'],
+  \ 'xml': ['xmllint'],
+  \ 'haskell': ['brittany']
+\ }
 let g:ale_fixers = {
-\  'javascript': ['eslint', 'prettier'],
-\  'typescript': ['eslint', 'prettier'],
-\  'typescriptreact': ['eslint', 'prettier'],
-\  'json': ['fixjson'],
-\  'ruby': ['rubocop'],
-\  'html': ['html-beautify'],
-\  'go': ['gofmt'],
-\  'xml': ['xmllint'],
-\  'haskell': ['brittany']
-\}
+  \ 'javascript': ['eslint', 'prettier'],
+  \ 'typescript': ['eslint', 'prettier'],
+  \ 'typescriptreact': ['eslint', 'prettier'],
+  \ 'json': ['fixjson'],
+  \ 'ruby': ['rubocop'],
+  \ 'html': ['html-beautify'],
+  \ 'go': ['gofmt'],
+  \ 'xml': ['xmllint'],
+  \ 'haskell': ['brittany']
+\ }
 let g:ale_sign_error = '>'
 let g:ale_sign_warning = '-'
 highlight link ALEError Error 
