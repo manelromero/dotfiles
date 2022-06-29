@@ -133,6 +133,9 @@ call plug#end()
 " Indent depending on filetype
 filetype plugin indent on
 
+" CoC extensions
+let g:coc_global_extensions = ['coc-tsserver']
+
 " ALE
 let g:ale_linters_explicit = 1
 let g:ale_linters = {

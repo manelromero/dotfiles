@@ -38,7 +38,7 @@ font:
   size: 22.5
   offset:
     x: 0
-    y: 2
+    y: 0
   glyph_offset:
     x: 0
     y: 0
@@ -81,7 +81,7 @@ bell:
   animation: EaseOutExpo
   duration: 0
   color: '0xffffff'
-background_opacity: 1.0
+window_opacity: 1.0
 mouse_bindings:
   - { mouse: Middle, action: PasteSelection }
 
