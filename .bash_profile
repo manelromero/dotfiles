@@ -4,12 +4,15 @@ ctags=/usr/local/bin/ctags
 # Add user path
 export PATH=$PATH:$HOME/bin
 
+# Add Node path
+export PATH=$PATH:/usr/local/opt/node@16/bin
+
 # Aliases
 alias l="ls -lAho"
 alias path="echo $PATH | tr ':' '\n'"
 alias et="sudo rm -rf ~/.Trash/*"
 alias glo="git log --pretty=format:'%C(yellow)%h%Creset %s %Cgreen%an%Creset [%cr]%Creset'"
-alias images="docker image ls -f dangling=true"
+alias images="docker image ls --filter dangling=true --format '{{ .ID }}'"
 alias fw="tmux new -s flywire || tmux a -t flywire"
 alias vpn="tmux new -s vpn || tmux a -t vpn"
 alias manel="tmux new -s manel || tmux a -t manel"
@@ -63,8 +66,3 @@ export PS1="\
 $orange\w\
 $yellow\$(__git_ps1 ' %s') \
 $reset> "
-
-# To open Jira tickets
-function jira() {
-  open -a "Brave Browser" https://jira.flywire.tech/browse/$1
-}
