@@ -136,6 +136,9 @@ filetype plugin indent on
 " CoC extensions
 let g:coc_global_extensions = ['coc-tsserver']
 
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
+
 " ALE
 let g:ale_linters_explicit = 1
 let g:ale_linters = {

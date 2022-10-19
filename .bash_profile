@@ -1,49 +1,33 @@
 source ~/.bashrc
 ctags=/usr/local/bin/ctags
 
-# Add user path
-export PATH=$PATH:$HOME/bin
-
-# Add Node path
-export PATH=$PATH:/usr/local/opt/node@16/bin
-
-# Aliases
-alias l="ls -lAho"
-alias path="echo $PATH | tr ':' '\n'"
-alias et="sudo rm -rf ~/.Trash/*"
-alias glo="git log --pretty=format:'%C(yellow)%h%Creset %s %Cgreen%an%Creset [%cr]%Creset'"
-alias images="docker image ls --filter dangling=true --format '{{ .ID }}'"
-alias fw="tmux new -s flywire || tmux a -t flywire"
-alias vpn="tmux new -s vpn || tmux a -t vpn"
-alias manel="tmux new -s manel || tmux a -t manel"
-alias containers="docker container ls -a --format 'table{{.Image}}\t{{.Names}}\t{{.Ports}}\t{{.Status}}'"
-
-# Application aliases
-alias api="cd ~/code/flywire-api"
-alias bankingledger="cd ~/code/bankingledger"
-alias core="cd ~/code/flywire-core"
-alias filer="cd ~/code/filer"
-alias gateway="cd ~/code/gateway"
-alias harvester="cd ~/code/matching-dataset-harvester"
-alias matching="cd ~/code/matching"
-alias mccommon="cd ~/code/missioncontrol-common"
-alias mccomponents="cd ~/code/missioncontrol-components"
-alias mcmatching="cd ~/code/missioncontrol-matching"
-alias mcpartners="cd ~/code/missioncontrol-partners"
-alias mcreconciliation="cd ~/code/missioncontrol-reconciliation"
-alias operations="cd ~/code/operations"
-alias payex="cd ~/code/flywire-payex"
-alias payex-back="cd ~/code/payex-backend"
-alias reconciliation="cd ~/code/reconciliation"
-alias ledgerdb="cd ~/code/ledger-dashboard"
+# Set locale
+export LC_ALL=en_GB.UTF-8
 
 # Activate colors
 export TERM="xterm-256color"
 export CLICOLOR=1
 export LSCOLORS=dxfxCxDxbxegedabagaced
 
-# Locale
-export LANG=en_GB.UTF-8
+# Aliases
+alias l="ls -lAho"
+alias path="echo $PATH | tr ':' '\n'"
+alias glo="git log --pretty=format:'%C(yellow)%h%Creset %s %Cgreen%an%Creset [%cr]%Creset'"
+alias images="docker image ls --filter dangling=true --format '{{ .ID }}'"
+alias fw="tmux new -s flywire || tmux a -t flywire"
+alias vpn="tmux new -s vpn || tmux a -t vpn"
+alias manel="tmux new -s manel || tmux a -t manel"
+alias containers="docker container ls -a --format 'table{{.Image}}\t{{.Names}}\t{{.Ports}}\t{{.Status}}'"
+alias magellan="docker run --rm -it -e USER=$USER -v $(PWD):/platform_app -v ~/.aws:/root/.aws magellan_release"
+
+# Application aliases
+alias api="cd ~/code/flywire-api"
+alias core="cd ~/code/flywire-core"
+alias filer="cd ~/code/filer"
+alias gateway="cd ~/code/gateway"
+alias operations="cd ~/code/operations"
+alias payex="cd ~/code/flywire-payex"
+alias payex-back="cd ~/code/payex-backend"
 
 # Enable Git tab completion
 source ~/.git-completion.bash

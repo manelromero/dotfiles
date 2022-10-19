@@ -39,7 +39,7 @@ set shm-=S
 
 " Folding
 set foldmethod=indent   
-set foldnestmax=1
+" set foldnestmax=1
 set nofoldenable
 
 " Status line
