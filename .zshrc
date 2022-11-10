@@ -1,6 +1,8 @@
 source ~/.bashrc
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 ctags=/usr/local/bin/ctags
+
+# For autosuggestions
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Set locale
 export LC_ALL=en_GB.UTF-8
