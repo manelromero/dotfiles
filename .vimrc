@@ -44,7 +44,7 @@ set noesckeys
 set shm-=S
 
 " Folding
-set foldmethod=indent   
+set foldmethod=syntax
 set foldnestmax=1
 set nofoldenable
 
@@ -58,10 +58,10 @@ set statusline+=%2*\ %f             " file path and name
 set statusline+=\ %m                " modified flag
 
 " Backup 
-set backup
+set nobackup
 set noswapfile
-set backupdir=~/.vim/temp
-set undodir=~/.vim/temp
+" set backupdir=~/.vim/temp
+" set undodir=~/.vim/temp
 
 " Search
 set hlsearch
@@ -73,7 +73,7 @@ set clipboard=unnamed
 " Leader
 let mapleader = ','
 
-" Some shortcuts
+" Shortcuts
 nnoremap <leader>f :Files<cr>
 nnoremap <leader>j :ALEFix<cr>
 nnoremap <leader>l <c-w>w
@@ -99,9 +99,6 @@ nnoremap <Left> <c-w><
 nnoremap <Up> <c-w>+
 nnoremap <Down> <c-w>-
 
-" Enable completion where available, must be set before ALE is loaded.
-let g:ale_completion_enabled = 1
-
 " Netrw
 " hide top banner
 let g:netrw_banner = 0
@@ -114,29 +111,13 @@ let g:polyglot_disabled = ['csv']
 " Detect filetype
 filetype on
 
-" vim-plug
-call plug#begin('~/.vim/plugged')
-Plug 'airblade/vim-gitgutter'
-Plug 'dense-analysis/ale'
-Plug 'jiangmiao/auto-pairs'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'leafgarland/typescript-vim'
-Plug 'maxmellon/vim-jsx-pretty'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'pangloss/vim-javascript'
-Plug 'sheerun/vim-polyglot'
-Plug 'tpope/vim-fugitive'
-Plug 'vim-ruby/vim-ruby'
-call plug#end()
-
 " Indent depending on filetype
 filetype plugin indent on
 
 " CoC extensions
 let g:coc_global_extensions = ['coc-tsserver']
 
-" use <tab> for trigger completion and navigate to the next complete item
+" Use <tab> for trigger completion and navigate to the next complete item
 function! CheckBackspace() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
@@ -147,6 +128,9 @@ inoremap <silent><expr> <Tab>
       \ CheckBackspace() ? "\<Tab>" :
       \ coc#refresh()
 
+" Use <cr> to confirm completion
+inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+
 " ALE
 let g:ale_linters_explicit = 1
 let g:ale_linters = {
@@ -154,14 +138,12 @@ let g:ale_linters = {
   \ 'typescript': ['eslint', 'prettier'],
   \ 'typescriptreact': ['eslint', 'prettier'],
   \ 'json': ['jsonlint', 'prettier'],
-  \ 'go': ['golint'],
   \ 'css': ['csslint', 'prettier', 'stylelint'],
   \ 'html': ['htmlhint'],
   \ 'ruby': ['rubocop'],
   \ 'make': ['checkmake'],
   \ 'haml': ['haml-lint'],
-  \ 'xml': ['xmllint'],
-  \ 'haskell': ['brittany']
+  \ 'xml': ['xmllint']
 \ }
 let g:ale_fixers = {
   \ 'javascript': ['eslint', 'prettier'],
@@ -170,16 +152,8 @@ let g:ale_fixers = {
   \ 'json': ['fixjson'],
   \ 'ruby': ['rubocop'],
   \ 'html': ['html-beautify'],
-  \ 'go': ['gofmt'],
-  \ 'xml': ['xmllint'],
-  \ 'haskell': ['brittany']
+  \ 'xml': ['xmllint']
 \ }
-let g:ale_sign_error = '>'
-let g:ale_sign_warning = '-'
-highlight link ALEError Error 
-highlight link ALEWarning Warning
-highlight clear ALEErrorSign
-highlight clear ALEWarningSign
 
 " GitGutter
 let g:gitgutter_sign_added = '+'

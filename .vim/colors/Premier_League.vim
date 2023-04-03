@@ -1,25 +1,25 @@
-" Manel theme
+" Premier League theme
 " A dark, balanced color scheme for Vim.
 
 " Terminal Colors
-let s:foreground = '251'
-let s:background = '233'
-let s:selection = '242'
-let s:line = '236'
+let s:foreground = '15'
+let s:background = '17'
+let s:selection = '61'
+let s:line = '60'
 let s:white = '15'
-let s:comment = '245'
-let s:red = '167'
-let s:orange = '173'
-let s:yellow = '222'
-let s:green = '142'
-let s:blue = '73'
-let s:purple = '139'
-let s:grey = '244'
+let s:comment = '146'
+let s:red = '196'
+let s:orange = '214'
+let s:yellow = '220'
+let s:green = '34'
+let s:blue = '39'
+let s:purple = '97'
+let s:grey = '242'
 
 hi clear
 syntax reset
 
-let g:colors_name = 'Manel'
+let g:colors_name = 'Premier_League'
 
 set background=dark
 
@@ -36,8 +36,8 @@ fun SetHighlight(group, ctermfg, ctermbg, attr)
 endfun
 
 " Vim Highlighting
-call SetHighlight('CursorColumn', '', s:line, '')
-call SetHighlight('CursorColumn', '', s:line, '')
+call SetHighlight('CursorColumn', '', s:line, 'none')
+call SetHighlight('CursorColumn', '', s:line, 'none')
 call SetHighlight('CursorLine', '', s:line, 'none')
 call SetHighlight('CursorLineNr', s:yellow, '', 'none')
 call SetHighlight('Directory', s:blue, '', '')
@@ -55,13 +55,15 @@ call SetHighlight('PMenu', s:foreground, s:grey, '')
 call SetHighlight('PMenuSbar', '', s:selection, '')
 call SetHighlight('PMenuSel', s:foreground, s:background, 'reverse')
 call SetHighlight('Question', s:green, '', '')
-call SetHighlight('Search', s:white, s:blue, '')
-call SetHighlight('SignColumn', '', s:background, '')
+call SetHighlight('Search', s:background, s:blue, '')
+call SetHighlight('SignColumn', '', s:background, 'none')
 call SetHighlight('SpecialKey', s:selection, '', '')
+call SetHighlight('StatusLine', s:selection, s:foreground, 'reverse')
+call SetHighlight('StatusLineNC', s:selection, s:grey, '')
 call SetHighlight('TabLine', s:selection, s:foreground, 'reverse')
 call SetHighlight('TabLineFill', s:selection, s:foreground, 'reverse')
-call SetHighlight('User1', s:blue, s:line, '')
-call SetHighlight('User2', s:yellow, s:line, '')
+call SetHighlight('User1', s:blue, s:selection, '')
+call SetHighlight('User2', s:yellow, s:selection, '')
 call SetHighlight('VertSplit', s:background, s:selection, '')
 call SetHighlight('Visual', '', s:selection, '')
 call SetHighlight('Warning', s:background, s:blue, '')
@@ -75,12 +77,6 @@ call SetHighlight('vimContinue', s:grey, '', '')
 call SetHighlight('vimFuncKey', s:purple, '', '')
 call SetHighlight('vimNotFunc', s:red, '', '')
 call SetHighlight('vimOption', s:blue, '', '')
-
-" ALE Highlighting
-call SetHighlight('ALEError', s:white, s:purple, 'underline')
-call SetHighlight('ALEWarning', s:white, s:purple, 'underline')
-call SetHighlight('ALEInfo', s:white, s:purple, 'underline')
-call SetHighlight('ALEVirtualTextWarning', s:comment, '', 'underline')
 
 " COC Highlighting
 call SetHighlight('CocErrorFloat', s:white, s:purple, '')
@@ -113,12 +109,12 @@ call SetHighlight('shVariable', s:blue, '', '')
 call SetHighlight('Comment', s:comment, '', '')
 call SetHighlight('Conditional', s:foreground, '', '')
 call SetHighlight('Constant', s:orange, '', '')
-call SetHighlight('Define', s:purple, '', '')
+call SetHighlight('Define', s:purple, '', 'none')
 call SetHighlight('Function', s:blue, '', '')
-call SetHighlight('Identifier', s:blue, '', '')
+call SetHighlight('Identifier', s:blue, '', 'none')
 call SetHighlight('Include', s:blue, '', '')
 call SetHighlight('Keyword', s:orange, '', '')
-call SetHighlight('Operator', s:blue, '', '')
+call SetHighlight('Operator', s:blue, '', 'none')
 call SetHighlight('PreProc', s:purple, '', '')
 call SetHighlight('Repeat', s:foreground, '', '')
 call SetHighlight('Special', s:foreground, '', '')
@@ -127,7 +123,7 @@ call SetHighlight('String', s:green, '', '')
 call SetHighlight('Structure', s:purple, '', '')
 call SetHighlight('Title', s:comment, '', '')
 call SetHighlight('Todo', s:comment, s:background, '')
-call SetHighlight('Type', s:blue, '', '')
+call SetHighlight('Type', s:blue, '', 'none')
 
 " Ruby Highlighting
 call SetHighlight('rubyAccess', s:red, '', '')
@@ -196,25 +192,20 @@ call SetHighlight('jsVariableDef', s:foreground, '', '')
 
 " TypeScript Highlighting
 call SetHighlight('typescriptBoolean', s:orange, '', '')
-call SetHighlight('typescriptBraces', s:white, '', '')
-call SetHighlight('typescriptBranch', s:purple, '', '')
-call SetHighlight('typescriptConditional', s:yellow, '', '')
-call SetHighlight('typescriptExceptions', s:red, '', '')
+call SetHighlight('typescriptBraces', s:blue, '', '')
 call SetHighlight('typescriptFuncKeyword', s:orange, '', '')
-call SetHighlight('typescriptGlobalObjects', s:yellow, '', '')
-call SetHighlight('typescriptLabel', s:purple, '', '')
+call SetHighlight('typescriptGlobalObjects', s:blue, '', '')
+call SetHighlight('typescriptLabel', s:blue, '', '')
 call SetHighlight('typescriptNull', s:red, '', '')
 call SetHighlight('typescriptNumber', s:orange, '', '')
 call SetHighlight('typescriptOpSymbols', s:blue, '', '')
 call SetHighlight('typescriptParens', s:blue, '', '')
 call SetHighlight('typescriptReserved', s:blue, '', '')
 call SetHighlight('typescriptStatement', s:red, '', '')
-call SetHighlight('typescriptStorageClass', s:orange, '', '')
+call SetHighlight('typescriptStorageClass', s:blue, '', '')
 call SetHighlight('typescriptStringB', s:green, '', '')
 call SetHighlight('typescriptStringS', s:green, '', '')
 call SetHighlight('typescriptType', s:yellow, '', '')
-call SetHighlight('typescriptInterpolation', s:yellow, '', '')
-call SetHighlight('typescriptInterpolationDelimiter', s:orange, '', '')
 
 " JSX Highlighting
 call SetHighlight('jsxAttrib', s:orange, '', '')
