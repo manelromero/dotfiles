@@ -6,7 +6,6 @@ cp ~/bin/dotfiles ${DESTINATION_PATH}dotfiles
 cp ~/.bash_profile ${DESTINATION_PATH}.bash_profile
 cp ~/.zshrc ${DESTINATION_PATH}.zshrc
 cp ~/.vimrc ${DESTINATION_PATH}.vimrc
-cp ~/.config/nvim/init.vim ${DESTINATION_PATH}init.vim
 cp -r ~/.vim/colors ${DESTINATION_PATH}.vim/
 cp ~/.tmux.conf ${DESTINATION_PATH}.tmux.conf
 cp ~/.alacritty.yml ${DESTINATION_PATH}.alacritty.yml
