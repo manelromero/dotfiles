@@ -1,3 +1,6 @@
+import:
+  - ~/.config/alacritty/themes/themes/tender.yaml
+
 env:
   TERM: xterm-256color
 
@@ -9,14 +12,15 @@ window:
     x: 0
     y: 0
   padding:
-    x: 0
-    y: 0
+    x: 5
+    y: 5
+  opacity: 1.0
   dynamic_padding: false
-  decorations: full
-  startup_mode: Fullscreen
+  decorations: Full
+  startup_mode: Maximized
   dynamic_title: true
   title: Alacritty
-  #class: Alacritty
+  class: Alacritty
 
 scrolling:
   history: 30000
@@ -46,42 +50,11 @@ font:
 
 draw_bold_text_with_bright_colors: true
 
-colors:
-  primary:
-    background: '0x000012'
-    foreground: '0xeeeeee'
-    #dim_foreground: '0x9a9a9a'
-    #bright_foreground: '0xffffff'
-  cursor:
-    cursor:  '0xc7c7c7'
-  #selection:
-    #text: '0xffffff'
-    #background: '0xffffff'
-  normal:
-    black:   '0x000000'
-    red:     '0xc91b00'
-    green:   '0x00c200'
-    yellow:  '0xe6c547'
-    blue:    '0x7aa6da'
-    magenta: '0xc397d8'
-    cyan:    '0x70c0ba'
-    white:   '0xeaeaea'
-  bright:
-    black:   '0x666666'
-    red:     '0xff3334'
-    green:   '0x9ec400'
-    yellow:  '0xe7c547'
-    blue:    '0x7aa6da'
-    magenta: '0xb77ee0'
-    cyan:    '0x54ced6'
-    white:   '0xffffff'
-  #dim:
-  indexed_colors: []
 bell:
   animation: EaseOutExpo
   duration: 0
   color: '0xffffff'
-window_opacity: 1.0
+
 mouse_bindings:
   - { mouse: Middle, action: PasteSelection }
 
@@ -96,17 +69,14 @@ selection:
 
 cursor:
   style: Block
+  custom_cursor_colors: true
   unfocused_hollow: true
 
 live_config_reload: true
 
-#shell:
-
 working_directory: None
 
 enable_experimental_conpty_backend: false
-
-alt_send_esc: true
 
 debug:
   render_timer: false

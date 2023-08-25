@@ -3,7 +3,7 @@
 
 " Terminal Colors
 let s:foreground = '251'
-let s:background = '233'
+let s:background = '234'
 let s:selection = '242'
 let s:line = '236'
 let s:white = '15'
@@ -20,8 +20,6 @@ hi clear
 syntax reset
 
 let g:colors_name = 'Manel'
-
-set background=dark
 
 fun SetHighlight(group, ctermfg, ctermbg, attr)
   if a:ctermfg != ''
@@ -75,6 +73,7 @@ call SetHighlight('vimContinue', s:grey, '', '')
 call SetHighlight('vimFuncKey', s:purple, '', '')
 call SetHighlight('vimNotFunc', s:red, '', '')
 call SetHighlight('vimOption', s:blue, '', '')
+call SetHighlight('vimVar', s:red, '', '')
 
 " ALE Highlighting
 call SetHighlight('ALEError', s:white, s:purple, 'underline')
@@ -83,23 +82,24 @@ call SetHighlight('ALEInfo', s:white, s:purple, 'underline')
 call SetHighlight('ALEVirtualTextWarning', s:comment, '', 'underline')
 
 " COC Highlighting
-call SetHighlight('CocErrorFloat', s:white, s:purple, '')
-call SetHighlight('CocErrorHighlight', s:white, s:selection, 'underline')
-call SetHighlight('CocErrorSign', s:red, '', '')
-call SetHighlight('CocErrorVirtualText', s:blue, '', '')
-call SetHighlight('CocFloating', s:white, s:orange, '')
-call SetHighlight('CocHintHighlight', s:white, s:blue, '')
-call SetHighlight('CocHintFloat', s:white, s:purple, '')
-call SetHighlight('CocHintSign', s:orange, s:white, '')
-call SetHighlight('CocHintVirtualText', s:blue, s:white, '')
-call SetHighlight('CocInfoFloat', s:white, s:purple, '')
-call SetHighlight('CocInfoHighlight', s:white, s:blue, '')
-call SetHighlight('CocInfoSign', s:blue, '', '')
-call SetHighlight('CocInfoVirtualText', s:blue, '', '')
-call SetHighlight('CocWarningFloat', s:white, s:purple, '')
-call SetHighlight('CocWarningHighlight', s:white, s:blue, '')
-call SetHighlight('CocWarningSign', s:yellow, '', '')
-call SetHighlight('CocWarningVirtualText', s:blue, '', '')
+" call SetHighlight('CocMenuSel', s:white, s:grey, '')
+" call SetHighlight('CocErrorFloat', s:white, s:purple, '')
+" call SetHighlight('CocErrorHighlight', s:white, s:selection, 'underline')
+" call SetHighlight('CocErrorSign', s:red, '', '')
+" call SetHighlight('CocErrorVirtualText', s:blue, '', '')
+" call SetHighlight('CocFloating', s:white, s:orange, '')
+" call SetHighlight('CocHintHighlight', s:white, s:blue, '')
+" call SetHighlight('CocHintFloat', s:white, s:purple, '')
+" call SetHighlight('CocHintSign', s:orange, s:white, '')
+" call SetHighlight('CocHintVirtualText', s:blue, s:white, '')
+" call SetHighlight('CocInfoFloat', s:white, s:purple, '')
+" call SetHighlight('CocInfoHighlight', s:white, s:blue, '')
+" call SetHighlight('CocInfoSign', s:blue, '', '')
+" call SetHighlight('CocInfoVirtualText', s:blue, '', '')
+" call SetHighlight('CocWarningFloat', s:white, s:purple, '')
+" call SetHighlight('CocWarningHighlight', s:white, s:blue, '')
+" call SetHighlight('CocWarningSign', s:yellow, '', '')
+" call SetHighlight('CocWarningVirtualText', s:blue, '', '')
 
 " Bash Highlighting
 call SetHighlight('shDerefSimple', s:red, '', '')

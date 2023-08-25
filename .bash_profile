@@ -28,8 +28,8 @@ alias api="cd ~/code/flywire-api"
 alias core="cd ~/code/flywire-core"
 alias filer="cd ~/code/filer"
 alias gateway="cd ~/code/gateway"
-alias operations="cd ~/code/operations"
 alias payex="cd ~/code/flywire-payex"
+alias checkout="cd ~/code/flywire-checkout"
 alias payex-back="cd ~/code/payex-backend"
 
 # Enable Git tab completion

@@ -27,8 +27,8 @@ alias api="cd ~/code/flywire-api"
 alias core="cd ~/code/flywire-core"
 alias filer="cd ~/code/filer"
 alias gateway="cd ~/code/gateway"
-alias operations="cd ~/code/operations"
 alias payex="cd ~/code/flywire-payex"
+alias checkout="cd ~/code/flywire-checkout"
 alias payex-back="cd ~/code/payex-backend"
 
 plugins=(zsh-autosuggestions)
@@ -68,7 +68,7 @@ function dc() {
   else
     echo "No dangling images found."
   fi
-  docker volume prune -f
   docker builder prune -af
+  docker volume prune -af
   docker system df
 }
